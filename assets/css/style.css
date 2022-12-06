@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+}
+
+#tab_switch_btns {
+    margin-top: 20px;
+}
+
+#historical_mode,
+#forcast_mode {
+    width: 100% !important;
+}
+
+#historical_mode {
+    z-index: 1;
+    position: relative;
+}
+
+#forcast_mode {
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 95% !important;
+}

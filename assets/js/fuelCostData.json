@@ -1,0 +1,2379 @@
+{
+    "fuelCostData": [
+        {
+            "year": "1996",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 45.4,
+                    "D7DU": 43.3,
+                    "D7DT": 62.5,
+                    "D7DV": 33.2
+                },
+                {
+                    "month": "February",
+                    "D7DW": 45.4,
+                    "D7DU": 43.3,
+                    "D7DT": 62.5,
+                    "D7DV": 32.9
+                },
+                {
+                    "month": "March",
+                    "D7DW": 45.4,
+                    "D7DU": 43.3,
+                    "D7DT": 62.5,
+                    "D7DV": 33.9
+                },
+                {
+                    "month": "April",
+                    "D7DW": 45.4,
+                    "D7DU": 43.3,
+                    "D7DT": 62.5,
+                    "D7DV": 34.9
+                },
+                {
+                    "month": "May",
+                    "D7DW": 44.0,
+                    "D7DU": 43.3,
+                    "D7DT": 62.6,
+                    "D7DV": 32.8
+                },
+                {
+                    "month": "June",
+                    "D7DW": 43.8,
+                    "D7DU": 43.3,
+                    "D7DT": 62.9,
+                    "D7DV": 32.1
+                },
+                {
+                    "month": "July",
+                    "D7DW": 43.9,
+                    "D7DU": 43.3,
+                    "D7DT": 63.0,
+                    "D7DV": 32.6
+                },
+                {
+                    "month": "August",
+                    "D7DW": 43.9,
+                    "D7DU": 43.3,
+                    "D7DT": 62.7,
+                    "D7DV": 32.9
+                },
+                {
+                    "month": "September",
+                    "D7DW": 44.8,
+                    "D7DU": 43.3,
+                    "D7DT": 62.4,
+                    "D7DV": 37.4
+                },
+                {
+                    "month": "October",
+                    "D7DW": 45.7,
+                    "D7DU": 43.3,
+                    "D7DT": 61.7,
+                    "D7DV": 40.7
+                },
+                {
+                    "month": "November",
+                    "D7DW": 46.1,
+                    "D7DU": 43.3,
+                    "D7DT": 61.3,
+                    "D7DV": 36.5
+                },
+                {
+                    "month": "December",
+                    "D7DW": 46.1,
+                    "D7DU": 43.3,
+                    "D7DT": 61.1,
+                    "D7DV": 38.3
+                }
+            ]
+        },
+        {
+            "year": "1997",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 46.2,
+                    "D7DU": 43.3,
+                    "D7DT": 60.4,
+                    "D7DV": 38.5
+                },
+                {
+                    "month": "February",
+                    "D7DW": 46.2,
+                    "D7DU": 43.3,
+                    "D7DT": 60.7,
+                    "D7DV": 36.1
+                },
+                {
+                    "month": "March",
+                    "D7DW": 46.1,
+                    "D7DU": 43.3,
+                    "D7DT": 60.9,
+                    "D7DV": 33.0
+                },
+                {
+                    "month": "April",
+                    "D7DW": 46.0,
+                    "D7DU": 43.1,
+                    "D7DT": 60.8,
+                    "D7DV": 31.3
+                },
+                {
+                    "month": "May",
+                    "D7DW": 44.7,
+                    "D7DU": 43.1,
+                    "D7DT": 60.4,
+                    "D7DV": 31.4
+                },
+                {
+                    "month": "June",
+                    "D7DW": 44.5,
+                    "D7DU": 43.1,
+                    "D7DT": 60.1,
+                    "D7DV": 30.6
+                },
+                {
+                    "month": "July",
+                    "D7DW": 44.6,
+                    "D7DU": 43.1,
+                    "D7DT": 59.7,
+                    "D7DV": 29.3
+                },
+                {
+                    "month": "August",
+                    "D7DW": 44.4,
+                    "D7DU": 43.1,
+                    "D7DT": 59.5,
+                    "D7DV": 30.5
+                },
+                {
+                    "month": "September",
+                    "D7DW": 44.3,
+                    "D7DU": 42.1,
+                    "D7DT": 57.7,
+                    "D7DV": 29.8
+                },
+                {
+                    "month": "October",
+                    "D7DW": 45.9,
+                    "D7DU": 42.1,
+                    "D7DT": 57.6,
+                    "D7DV": 31.3
+                },
+                {
+                    "month": "November",
+                    "D7DW": 45.9,
+                    "D7DU": 42.1,
+                    "D7DT": 57.1,
+                    "D7DV": 31.2
+                },
+                {
+                    "month": "December",
+                    "D7DW": 45.9,
+                    "D7DU": 42.1,
+                    "D7DT": 56.7,
+                    "D7DV": 30.3
+                }
+            ]
+        },
+        {
+            "year": "1998",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 45.9,
+                    "D7DU": 41.6,
+                    "D7DT": 56.6,
+                    "D7DV": 28.1
+                },
+                {
+                    "month": "February",
+                    "D7DW": 45.9,
+                    "D7DU": 41.6,
+                    "D7DT": 57.1,
+                    "D7DV": 26.6
+                },
+                {
+                    "month": "March",
+                    "D7DW": 45.9,
+                    "D7DU": 41.4,
+                    "D7DT": 57.6,
+                    "D7DV": 25.0
+                },
+                {
+                    "month": "April",
+                    "D7DW": 45.9,
+                    "D7DU": 41.4,
+                    "D7DT": 57.6,
+                    "D7DV": 25.2
+                },
+                {
+                    "month": "May",
+                    "D7DW": 44.8,
+                    "D7DU": 41.4,
+                    "D7DT": 57.0,
+                    "D7DV": 25.3
+                },
+                {
+                    "month": "June",
+                    "D7DW": 44.9,
+                    "D7DU": 41.3,
+                    "D7DT": 56.5,
+                    "D7DV": 24.5
+                },
+                {
+                    "month": "July",
+                    "D7DW": 45.1,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 23.7
+                },
+                {
+                    "month": "August",
+                    "D7DW": 45.1,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 23.2
+                },
+                {
+                    "month": "September",
+                    "D7DW": 45.4,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 24.0
+                },
+                {
+                    "month": "October",
+                    "D7DW": 46.9,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 24.9
+                },
+                {
+                    "month": "November",
+                    "D7DW": 47.0,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 24.0
+                },
+                {
+                    "month": "December",
+                    "D7DW": 47.0,
+                    "D7DU": 41.4,
+                    "D7DT": 56.1,
+                    "D7DV": 22.3
+                }
+            ]
+        },
+        {
+            "year": "1999",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 47.0,
+                    "D7DU": 41.6,
+                    "D7DT": 56.1,
+                    "D7DV": 22.5
+                },
+                {
+                    "month": "February",
+                    "D7DW": 47.0,
+                    "D7DU": 41.6,
+                    "D7DT": 56.1,
+                    "D7DV": 22.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 47.0,
+                    "D7DU": 41.7,
+                    "D7DT": 56.1,
+                    "D7DV": 23.3
+                },
+                {
+                    "month": "April",
+                    "D7DW": 47.1,
+                    "D7DU": 41.3,
+                    "D7DT": 56.1,
+                    "D7DV": 25.8
+                },
+                {
+                    "month": "May",
+                    "D7DW": 46.0,
+                    "D7DU": 41.3,
+                    "D7DT": 56.0,
+                    "D7DV": 25.5
+                },
+                {
+                    "month": "June",
+                    "D7DW": 45.9,
+                    "D7DU": 41.3,
+                    "D7DT": 56.0,
+                    "D7DV": 25.5
+                },
+                {
+                    "month": "July",
+                    "D7DW": 45.9,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 28.8
+                },
+                {
+                    "month": "August",
+                    "D7DW": 45.9,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 29.4
+                },
+                {
+                    "month": "September",
+                    "D7DW": 46.3,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 31.4
+                },
+                {
+                    "month": "October",
+                    "D7DW": 47.4,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 31.4
+                },
+                {
+                    "month": "November",
+                    "D7DW": 47.6,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 33.2
+                },
+                {
+                    "month": "December",
+                    "D7DW": 47.7,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 38.1
+                }
+            ]
+        },
+        {
+            "year": "2000",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 47.8,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 37.3
+                },
+                {
+                    "month": "February",
+                    "D7DW": 47.7,
+                    "D7DU": 41.3,
+                    "D7DT": 55.8,
+                    "D7DV": 37.5
+                },
+                {
+                    "month": "March",
+                    "D7DW": 47.8,
+                    "D7DU": 41.3,
+                    "D7DT": 55.7,
+                    "D7DV": 38.8
+                },
+                {
+                    "month": "April",
+                    "D7DW": 47.7,
+                    "D7DU": 40.2,
+                    "D7DT": 55.6,
+                    "D7DV": 37.7
+                },
+                {
+                    "month": "May",
+                    "D7DW": 46.5,
+                    "D7DU": 40.2,
+                    "D7DT": 55.1,
+                    "D7DV": 36.8
+                },
+                {
+                    "month": "June",
+                    "D7DW": 46.2,
+                    "D7DU": 40.2,
+                    "D7DT": 54.5,
+                    "D7DV": 37.9
+                },
+                {
+                    "month": "July",
+                    "D7DW": 46.1,
+                    "D7DU": 40.2,
+                    "D7DT": 54.2,
+                    "D7DV": 40.9
+                },
+                {
+                    "month": "August",
+                    "D7DW": 46.2,
+                    "D7DU": 40.2,
+                    "D7DT": 54.2,
+                    "D7DV": 41.2
+                },
+                {
+                    "month": "September",
+                    "D7DW": 47.1,
+                    "D7DU": 40.2,
+                    "D7DT": 54.2,
+                    "D7DV": 52.2
+                },
+                {
+                    "month": "October",
+                    "D7DW": 48.6,
+                    "D7DU": 40.4,
+                    "D7DT": 54.2,
+                    "D7DV": 55.2
+                },
+                {
+                    "month": "November",
+                    "D7DW": 49.0,
+                    "D7DU": 40.4,
+                    "D7DT": 54.2,
+                    "D7DV": 51.4
+                },
+                {
+                    "month": "December",
+                    "D7DW": 49.1,
+                    "D7DU": 40.4,
+                    "D7DT": 54.2,
+                    "D7DV": 48.8
+                }
+            ]
+        },
+        {
+            "year": "2001",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 49.3,
+                    "D7DU": 40.4,
+                    "D7DT": 54.2,
+                    "D7DV": 42.4
+                },
+                {
+                    "month": "February",
+                    "D7DW": 49.1,
+                    "D7DU": 40.5,
+                    "D7DT": 54.2,
+                    "D7DV": 43.0
+                },
+                {
+                    "month": "March",
+                    "D7DW": 49.1,
+                    "D7DU": 40.5,
+                    "D7DT": 54.2,
+                    "D7DV": 41.6
+                },
+                {
+                    "month": "April",
+                    "D7DW": 49.1,
+                    "D7DU": 42.1,
+                    "D7DT": 54.2,
+                    "D7DV": 40.3
+                },
+                {
+                    "month": "May",
+                    "D7DW": 48.6,
+                    "D7DU": 42.2,
+                    "D7DT": 54.2,
+                    "D7DV": 42.1
+                },
+                {
+                    "month": "June",
+                    "D7DW": 48.4,
+                    "D7DU": 42.2,
+                    "D7DT": 54.3,
+                    "D7DV": 42.2
+                },
+                {
+                    "month": "July",
+                    "D7DW": 48.1,
+                    "D7DU": 42.2,
+                    "D7DT": 54.3,
+                    "D7DV": 40.4
+                },
+                {
+                    "month": "August",
+                    "D7DW": 48.2,
+                    "D7DU": 42.2,
+                    "D7DT": 54.3,
+                    "D7DV": 39.2
+                },
+                {
+                    "month": "September",
+                    "D7DW": 50.6,
+                    "D7DU": 42.2,
+                    "D7DT": 54.4,
+                    "D7DV": 46.6
+                },
+                {
+                    "month": "October",
+                    "D7DW": 51.9,
+                    "D7DU": 42.2,
+                    "D7DT": 54.4,
+                    "D7DV": 38.5
+                },
+                {
+                    "month": "November",
+                    "D7DW": 52.2,
+                    "D7DU": 42.2,
+                    "D7DT": 54.4,
+                    "D7DV": 34.9
+                },
+                {
+                    "month": "December",
+                    "D7DW": 52.3,
+                    "D7DU": 42.2,
+                    "D7DT": 54.4,
+                    "D7DV": 32.8
+                }
+            ]
+        },
+        {
+            "year": "2002",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 52.3,
+                    "D7DU": 44.1,
+                    "D7DT": 54.4,
+                    "D7DV": 34.3
+                },
+                {
+                    "month": "February",
+                    "D7DW": 52.3,
+                    "D7DU": 44.1,
+                    "D7DT": 54.4,
+                    "D7DV": 33.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 52.4,
+                    "D7DU": 44.2,
+                    "D7DT": 54.4,
+                    "D7DV": 35.2
+                },
+                {
+                    "month": "April",
+                    "D7DW": 52.4,
+                    "D7DU": 44.3,
+                    "D7DT": 54.4,
+                    "D7DV": 36.5
+                },
+                {
+                    "month": "May",
+                    "D7DW": 51.6,
+                    "D7DU": 44.3,
+                    "D7DT": 54.5,
+                    "D7DV": 36.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 51.4,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 35.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 51.4,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 35.2
+                },
+                {
+                    "month": "August",
+                    "D7DW": 51.3,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 34.8
+                },
+                {
+                    "month": "September",
+                    "D7DW": 52.2,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 39.3
+                },
+                {
+                    "month": "October",
+                    "D7DW": 53.2,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 39.7
+                },
+                {
+                    "month": "November",
+                    "D7DW": 53.7,
+                    "D7DU": 44.5,
+                    "D7DT": 54.5,
+                    "D7DV": 36.1
+                },
+                {
+                    "month": "December",
+                    "D7DW": 53.6,
+                    "D7DU": 44.6,
+                    "D7DT": 54.5,
+                    "D7DV": 40.0
+                }
+            ]
+        },
+        {
+            "year": "2003",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 53.5,
+                    "D7DU": 44.6,
+                    "D7DT": 54.7,
+                    "D7DV": 41.9
+                },
+                {
+                    "month": "February",
+                    "D7DW": 53.5,
+                    "D7DU": 44.6,
+                    "D7DT": 54.7,
+                    "D7DV": 49.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 53.6,
+                    "D7DU": 44.6,
+                    "D7DT": 54.7,
+                    "D7DV": 50.7
+                },
+                {
+                    "month": "April",
+                    "D7DW": 53.2,
+                    "D7DU": 44.7,
+                    "D7DT": 54.7,
+                    "D7DV": 37.9
+                },
+                {
+                    "month": "May",
+                    "D7DW": 52.7,
+                    "D7DU": 45.0,
+                    "D7DT": 54.8,
+                    "D7DV": 35.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 52.6,
+                    "D7DU": 45.3,
+                    "D7DT": 54.9,
+                    "D7DV": 35.0
+                },
+                {
+                    "month": "July",
+                    "D7DW": 52.6,
+                    "D7DU": 45.4,
+                    "D7DT": 55.1,
+                    "D7DV": 36.2
+                },
+                {
+                    "month": "August",
+                    "D7DW": 52.6,
+                    "D7DU": 45.5,
+                    "D7DT": 55.3,
+                    "D7DV": 37.7
+                },
+                {
+                    "month": "September",
+                    "D7DW": 53.3,
+                    "D7DU": 45.5,
+                    "D7DT": 55.4,
+                    "D7DV": 37.2
+                },
+                {
+                    "month": "October",
+                    "D7DW": 54.4,
+                    "D7DU": 45.6,
+                    "D7DT": 55.4,
+                    "D7DV": 40.4
+                },
+                {
+                    "month": "November",
+                    "D7DW": 54.5,
+                    "D7DU": 45.8,
+                    "D7DT": 55.6,
+                    "D7DV": 40.2
+                },
+                {
+                    "month": "December",
+                    "D7DW": 54.5,
+                    "D7DU": 45.9,
+                    "D7DT": 55.7,
+                    "D7DV": 42.1
+                }
+            ]
+        },
+        {
+            "year": "2004",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 54.7,
+                    "D7DU": 46.2,
+                    "D7DT": 56.0,
+                    "D7DV": 41.3
+                },
+                {
+                    "month": "February",
+                    "D7DW": 54.9,
+                    "D7DU": 46.7,
+                    "D7DT": 56.3,
+                    "D7DV": 40.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 54.8,
+                    "D7DU": 47.4,
+                    "D7DT": 57.0,
+                    "D7DV": 40.7
+                },
+                {
+                    "month": "April",
+                    "D7DW": 54.8,
+                    "D7DU": 47.8,
+                    "D7DT": 57.6,
+                    "D7DV": 44.2
+                },
+                {
+                    "month": "May",
+                    "D7DW": 54.4,
+                    "D7DU": 47.9,
+                    "D7DT": 57.9,
+                    "D7DV": 47.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 54.3,
+                    "D7DU": 48.0,
+                    "D7DT": 58.3,
+                    "D7DV": 44.9
+                },
+                {
+                    "month": "July",
+                    "D7DW": 54.6,
+                    "D7DU": 48.2,
+                    "D7DT": 58.4,
+                    "D7DV": 45.3
+                },
+                {
+                    "month": "August",
+                    "D7DW": 55.5,
+                    "D7DU": 48.3,
+                    "D7DT": 58.5,
+                    "D7DV": 49.7
+                },
+                {
+                    "month": "September",
+                    "D7DW": 56.9,
+                    "D7DU": 48.4,
+                    "D7DT": 58.8,
+                    "D7DV": 52.2
+                },
+                {
+                    "month": "October",
+                    "D7DW": 59.1,
+                    "D7DU": 49.1,
+                    "D7DT": 59.4,
+                    "D7DV": 59.2
+                },
+                {
+                    "month": "November",
+                    "D7DW": 59.8,
+                    "D7DU": 50.7,
+                    "D7DT": 60.4,
+                    "D7DV": 55.0
+                },
+                {
+                    "month": "December",
+                    "D7DW": 60.4,
+                    "D7DU": 52.4,
+                    "D7DT": 61.6,
+                    "D7DV": 51.0
+                }
+            ]
+        },
+        {
+            "year": "2005",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 60.6,
+                    "D7DU": 53.3,
+                    "D7DT": 62.5,
+                    "D7DV": 51.8
+                },
+                {
+                    "month": "February",
+                    "D7DW": 61.1,
+                    "D7DU": 53.6,
+                    "D7DT": 63.0,
+                    "D7DV": 51.8
+                },
+                {
+                    "month": "March",
+                    "D7DW": 61.2,
+                    "D7DU": 53.7,
+                    "D7DT": 63.4,
+                    "D7DV": 59.2
+                },
+                {
+                    "month": "April",
+                    "D7DW": 61.2,
+                    "D7DU": 54.0,
+                    "D7DT": 63.6,
+                    "D7DV": 61.3
+                },
+                {
+                    "month": "May",
+                    "D7DW": 60.6,
+                    "D7DU": 54.1,
+                    "D7DT": 63.8,
+                    "D7DV": 57.9
+                },
+                {
+                    "month": "June",
+                    "D7DW": 60.4,
+                    "D7DU": 54.4,
+                    "D7DT": 63.9,
+                    "D7DV": 63.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 60.3,
+                    "D7DU": 54.4,
+                    "D7DT": 63.9,
+                    "D7DV": 68.1
+                },
+                {
+                    "month": "August",
+                    "D7DW": 61.1,
+                    "D7DU": 54.5,
+                    "D7DT": 64.0,
+                    "D7DV": 72.3
+                },
+                {
+                    "month": "September",
+                    "D7DW": 61.7,
+                    "D7DU": 55.1,
+                    "D7DT": 64.8,
+                    "D7DV": 73.8
+                },
+                {
+                    "month": "October",
+                    "D7DW": 64.4,
+                    "D7DU": 57.3,
+                    "D7DT": 66.2,
+                    "D7DV": 76.8
+                },
+                {
+                    "month": "November",
+                    "D7DW": 65.0,
+                    "D7DU": 59.4,
+                    "D7DT": 67.6,
+                    "D7DV": 68.4
+                },
+                {
+                    "month": "December",
+                    "D7DW": 65.2,
+                    "D7DU": 60.6,
+                    "D7DT": 68.2,
+                    "D7DV": 71.0
+                }
+            ]
+        },
+        {
+            "year": "2006",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 65.3,
+                    "D7DU": 61.1,
+                    "D7DT": 68.9,
+                    "D7DV": 72.3
+                },
+                {
+                    "month": "February",
+                    "D7DW": 65.3,
+                    "D7DU": 61.3,
+                    "D7DT": 69.7,
+                    "D7DV": 73.7
+                },
+                {
+                    "month": "March",
+                    "D7DW": 65.4,
+                    "D7DU": 63.3,
+                    "D7DT": 71.6,
+                    "D7DV": 74.5
+                },
+                {
+                    "month": "April",
+                    "D7DW": 65.5,
+                    "D7DU": 67.3,
+                    "D7DT": 74.6,
+                    "D7DV": 76.6
+                },
+                {
+                    "month": "May",
+                    "D7DW": 66.2,
+                    "D7DU": 71.4,
+                    "D7DT": 77.7,
+                    "D7DV": 77.1
+                },
+                {
+                    "month": "June",
+                    "D7DW": 64.9,
+                    "D7DU": 73.4,
+                    "D7DT": 79.6,
+                    "D7DV": 77.0
+                },
+                {
+                    "month": "July",
+                    "D7DW": 64.8,
+                    "D7DU": 74.1,
+                    "D7DT": 80.4,
+                    "D7DV": 79.5
+                },
+                {
+                    "month": "August",
+                    "D7DW": 65.4,
+                    "D7DU": 74.9,
+                    "D7DT": 81.0,
+                    "D7DV": 77.8
+                },
+                {
+                    "month": "September",
+                    "D7DW": 66.2,
+                    "D7DU": 76.8,
+                    "D7DT": 82.1,
+                    "D7DV": 73.7
+                },
+                {
+                    "month": "October",
+                    "D7DW": 69.6,
+                    "D7DU": 80.5,
+                    "D7DT": 84.3,
+                    "D7DV": 67.6
+                },
+                {
+                    "month": "November",
+                    "D7DW": 70.4,
+                    "D7DU": 83.0,
+                    "D7DT": 85.9,
+                    "D7DV": 64.5
+                },
+                {
+                    "month": "December",
+                    "D7DW": 70.4,
+                    "D7DU": 84.6,
+                    "D7DT": 86.9,
+                    "D7DV": 67.6
+                }
+            ]
+        },
+        {
+            "year": "2007",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 70.5,
+                    "D7DU": 84.8,
+                    "D7DT": 87.3,
+                    "D7DV": 62.9
+                },
+                {
+                    "month": "February",
+                    "D7DW": 70.7,
+                    "D7DU": 85.1,
+                    "D7DT": 87.6,
+                    "D7DV": 64.3
+                },
+                {
+                    "month": "March",
+                    "D7DW": 70.7,
+                    "D7DU": 84.4,
+                    "D7DT": 87.6,
+                    "D7DV": 66.6
+                },
+                {
+                    "month": "April",
+                    "D7DW": 70.7,
+                    "D7DU": 82.1,
+                    "D7DT": 86.8,
+                    "D7DV": 69.3
+                },
+                {
+                    "month": "May",
+                    "D7DW": 70.4,
+                    "D7DU": 79.4,
+                    "D7DT": 85.8,
+                    "D7DV": 69.0
+                },
+                {
+                    "month": "June",
+                    "D7DW": 70.0,
+                    "D7DU": 77.2,
+                    "D7DT": 84.6,
+                    "D7DV": 70.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 69.9,
+                    "D7DU": 75.5,
+                    "D7DT": 83.6,
+                    "D7DV": 72.6
+                },
+                {
+                    "month": "August",
+                    "D7DW": 70.0,
+                    "D7DU": 74.4,
+                    "D7DT": 83.1,
+                    "D7DV": 71.1
+                },
+                {
+                    "month": "September",
+                    "D7DW": 70.8,
+                    "D7DU": 73.9,
+                    "D7DT": 83.1,
+                    "D7DV": 75.5
+                },
+                {
+                    "month": "October",
+                    "D7DW": 72.9,
+                    "D7DU": 73.6,
+                    "D7DT": 83.0,
+                    "D7DV": 78.3
+                },
+                {
+                    "month": "November",
+                    "D7DW": 74.2,
+                    "D7DU": 73.6,
+                    "D7DT": 83.0,
+                    "D7DV": 88.8
+                },
+                {
+                    "month": "December",
+                    "D7DW": 75.7,
+                    "D7DU": 73.7,
+                    "D7DT": 83.0,
+                    "D7DV": 89.3
+                }
+            ]
+        },
+        {
+            "year": "2008",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 76.6,
+                    "D7DU": 74.1,
+                    "D7DT": 83.4,
+                    "D7DV": 92.7
+                },
+                {
+                    "month": "February",
+                    "D7DW": 77.0,
+                    "D7DU": 83.4,
+                    "D7DT": 92.2,
+                    "D7DV": 92.9
+                },
+                {
+                    "month": "March",
+                    "D7DW": 77.3,
+                    "D7DU": 83.4,
+                    "D7DT": 92.2,
+                    "D7DV": 106.1
+                },
+                {
+                    "month": "April",
+                    "D7DW": 77.5,
+                    "D7DU": 85.1,
+                    "D7DT": 94.1,
+                    "D7DV": 117.3
+                },
+                {
+                    "month": "May",
+                    "D7DW": 79.1,
+                    "D7DU": 85.1,
+                    "D7DT": 94.1,
+                    "D7DV": 127.2
+                },
+                {
+                    "month": "June",
+                    "D7DW": 80.7,
+                    "D7DU": 85.1,
+                    "D7DT": 94.1,
+                    "D7DV": 132.9
+                },
+                {
+                    "month": "July",
+                    "D7DW": 81.5,
+                    "D7DU": 85.2,
+                    "D7DT": 94.1,
+                    "D7DV": 139.6
+                },
+                {
+                    "month": "August",
+                    "D7DW": 82.4,
+                    "D7DU": 95.1,
+                    "D7DT": 98.1,
+                    "D7DV": 118.3
+                },
+                {
+                    "month": "September",
+                    "D7DW": 89.8,
+                    "D7DU": 110.8,
+                    "D7DT": 108.2,
+                    "D7DV": 115.3
+                },
+                {
+                    "month": "October",
+                    "D7DW": 98.2,
+                    "D7DU": 111.1,
+                    "D7DT": 109.0,
+                    "D7DV": 98.5
+                },
+                {
+                    "month": "November",
+                    "D7DW": 99.0,
+                    "D7DU": 110.9,
+                    "D7DT": 109.0,
+                    "D7DV": 90.5
+                },
+                {
+                    "month": "December",
+                    "D7DW": 99.9,
+                    "D7DU": 110.9,
+                    "D7DT": 109.0,
+                    "D7DV": 80.5
+                }
+            ]
+        },
+        {
+            "year": "2009",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 101.0,
+                    "D7DU": 110.9,
+                    "D7DT": 108.7,
+                    "D7DV": 79.3
+                },
+                {
+                    "month": "February",
+                    "D7DW": 101.1,
+                    "D7DU": 110.9,
+                    "D7DT": 108.7,
+                    "D7DV": 74.9
+                },
+                {
+                    "month": "March",
+                    "D7DW": 101.0,
+                    "D7DU": 106.2,
+                    "D7DT": 108.2,
+                    "D7DV": 67.5
+                },
+                {
+                    "month": "April",
+                    "D7DW": 101.0,
+                    "D7DU": 105.1,
+                    "D7DT": 102.7,
+                    "D7DV": 71.5
+                },
+                {
+                    "month": "May",
+                    "D7DW": 99.3,
+                    "D7DU": 105.1,
+                    "D7DT": 100.5,
+                    "D7DV": 71.6
+                },
+                {
+                    "month": "June",
+                    "D7DW": 98.5,
+                    "D7DU": 105.1,
+                    "D7DT": 100.5,
+                    "D7DV": 79.2
+                },
+                {
+                    "month": "July",
+                    "D7DW": 97.7,
+                    "D7DU": 104.6,
+                    "D7DT": 100.5,
+                    "D7DV": 70.9
+                },
+                {
+                    "month": "August",
+                    "D7DW": 98.3,
+                    "D7DU": 104.6,
+                    "D7DT": 100.5,
+                    "D7DV": 79.0
+                },
+                {
+                    "month": "September",
+                    "D7DW": 98.5,
+                    "D7DU": 104.6,
+                    "D7DT": 100.5,
+                    "D7DV": 77.1
+                },
+                {
+                    "month": "October",
+                    "D7DW": 100.6,
+                    "D7DU": 104.5,
+                    "D7DT": 100.1,
+                    "D7DV": 82.0
+                },
+                {
+                    "month": "November",
+                    "D7DW": 101.4,
+                    "D7DU": 104.5,
+                    "D7DT": 100.1,
+                    "D7DV": 84.3
+                },
+                {
+                    "month": "December",
+                    "D7DW": 101.5,
+                    "D7DU": 104.5,
+                    "D7DT": 100.1,
+                    "D7DV": 86.2
+                }
+            ]
+        },
+        {
+            "year": "2010",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 101.4,
+                    "D7DU": 104.6,
+                    "D7DT": 100.1,
+                    "D7DV": 103.6
+                },
+                {
+                    "month": "February",
+                    "D7DW": 101.5,
+                    "D7DU": 101.6,
+                    "D7DT": 100.1,
+                    "D7DV": 90.6
+                },
+                {
+                    "month": "March",
+                    "D7DW": 101.5,
+                    "D7DU": 101.6,
+                    "D7DT": 100.1,
+                    "D7DV": 97.0
+                },
+                {
+                    "month": "April",
+                    "D7DW": 101.5,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 100.1
+                },
+                {
+                    "month": "May",
+                    "D7DW": 99.1,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 100.1
+                },
+                {
+                    "month": "June",
+                    "D7DW": 97.8,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 96.8
+                },
+                {
+                    "month": "July",
+                    "D7DW": 96.9,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 95.0
+                },
+                {
+                    "month": "August",
+                    "D7DW": 97.6,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 94.8
+                },
+                {
+                    "month": "September",
+                    "D7DW": 98.1,
+                    "D7DU": 98.7,
+                    "D7DT": 99.9,
+                    "D7DV": 94.5
+                },
+                {
+                    "month": "October",
+                    "D7DW": 101.0,
+                    "D7DU": 98.7,
+                    "D7DT": 99.6,
+                    "D7DV": 98.2
+                },
+                {
+                    "month": "November",
+                    "D7DW": 101.6,
+                    "D7DU": 98.7,
+                    "D7DT": 99.6,
+                    "D7DV": 101.6
+                },
+                {
+                    "month": "December",
+                    "D7DW": 102.2,
+                    "D7DU": 103.2,
+                    "D7DT": 100.9,
+                    "D7DV": 128.1
+                }
+            ]
+        },
+        {
+            "year": "2011",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 103.1,
+                    "D7DU": 104.1,
+                    "D7DT": 101.7,
+                    "D7DV": 125.5
+                },
+                {
+                    "month": "February",
+                    "D7DW": 104.0,
+                    "D7DU": 104.5,
+                    "D7DT": 103.2,
+                    "D7DV": 119.8
+                },
+                {
+                    "month": "March",
+                    "D7DW": 103.7,
+                    "D7DU": 105.0,
+                    "D7DT": 104.0,
+                    "D7DV": 130.4
+                },
+                {
+                    "month": "April",
+                    "D7DW": 104.1,
+                    "D7DU": 105.0,
+                    "D7DT": 104.0,
+                    "D7DV": 135.7
+                },
+                {
+                    "month": "May",
+                    "D7DW": 102.7,
+                    "D7DU": 105.0,
+                    "D7DT": 104.0,
+                    "D7DV": 125.4
+                },
+                {
+                    "month": "June",
+                    "D7DW": 102.5,
+                    "D7DU": 105.0,
+                    "D7DT": 104.0,
+                    "D7DV": 128.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 102.7,
+                    "D7DU": 105.0,
+                    "D7DT": 104.0,
+                    "D7DV": 124.8
+                },
+                {
+                    "month": "August",
+                    "D7DW": 102.8,
+                    "D7DU": 106.9,
+                    "D7DT": 105.0,
+                    "D7DV": 120.1
+                },
+                {
+                    "month": "September",
+                    "D7DW": 103.4,
+                    "D7DU": 120.7,
+                    "D7DT": 112.8,
+                    "D7DV": 123.8
+                },
+                {
+                    "month": "October",
+                    "D7DW": 109.1,
+                    "D7DU": 122.4,
+                    "D7DT": 114.5,
+                    "D7DV": 123.2
+                },
+                {
+                    "month": "November",
+                    "D7DW": 109.9,
+                    "D7DU": 123.6,
+                    "D7DT": 115.1,
+                    "D7DV": 130.9
+                },
+                {
+                    "month": "December",
+                    "D7DW": 110.1,
+                    "D7DU": 123.6,
+                    "D7DT": 115.1,
+                    "D7DV": 131.4
+                }
+            ]
+        },
+        {
+            "year": "2012",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 110.2,
+                    "D7DU": 123.6,
+                    "D7DT": 115.1,
+                    "D7DV": 131.6
+                },
+                {
+                    "month": "February",
+                    "D7DW": 109.5,
+                    "D7DU": 122.4,
+                    "D7DT": 113.7,
+                    "D7DV": 134.1
+                },
+                {
+                    "month": "March",
+                    "D7DW": 110.0,
+                    "D7DU": 121.9,
+                    "D7DT": 112.4,
+                    "D7DV": 136.4
+                },
+                {
+                    "month": "April",
+                    "D7DW": 110.0,
+                    "D7DU": 121.2,
+                    "D7DT": 112.4,
+                    "D7DV": 134.8
+                },
+                {
+                    "month": "May",
+                    "D7DW": 107.7,
+                    "D7DU": 121.2,
+                    "D7DT": 112.3,
+                    "D7DV": 127.3
+                },
+                {
+                    "month": "June",
+                    "D7DW": 106.8,
+                    "D7DU": 121.2,
+                    "D7DT": 112.3,
+                    "D7DV": 117.4
+                },
+                {
+                    "month": "July",
+                    "D7DW": 107.2,
+                    "D7DU": 121.2,
+                    "D7DT": 112.3,
+                    "D7DV": 120.4
+                },
+                {
+                    "month": "August",
+                    "D7DW": 107.0,
+                    "D7DU": 121.2,
+                    "D7DT": 112.3,
+                    "D7DV": 128.9
+                },
+                {
+                    "month": "September",
+                    "D7DW": 107.5,
+                    "D7DU": 121.2,
+                    "D7DT": 112.3,
+                    "D7DV": 132.4
+                },
+                {
+                    "month": "October",
+                    "D7DW": 108.4,
+                    "D7DU": 121.2,
+                    "D7DT": 111.8,
+                    "D7DV": 133.9
+                },
+                {
+                    "month": "November",
+                    "D7DW": 108.9,
+                    "D7DU": 123.5,
+                    "D7DT": 113.8,
+                    "D7DV": 130.7
+                },
+                {
+                    "month": "December",
+                    "D7DW": 109.4,
+                    "D7DU": 130.1,
+                    "D7DT": 119.6,
+                    "D7DV": 137.5
+                }
+            ]
+        },
+        {
+            "year": "2013",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 109.5,
+                    "D7DU": 129.9,
+                    "D7DT": 119.6,
+                    "D7DV": 134.7
+                },
+                {
+                    "month": "February",
+                    "D7DW": 109.8,
+                    "D7DU": 131.3,
+                    "D7DT": 121.0,
+                    "D7DV": 143.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 109.2,
+                    "D7DU": 131.3,
+                    "D7DT": 121.0,
+                    "D7DV": 141.5
+                },
+                {
+                    "month": "April",
+                    "D7DW": 109.2,
+                    "D7DU": 131.3,
+                    "D7DT": 121.0,
+                    "D7DV": 133.9
+                },
+                {
+                    "month": "May",
+                    "D7DW": 109.4,
+                    "D7DU": 131.3,
+                    "D7DT": 121.0,
+                    "D7DV": 125.0
+                },
+                {
+                    "month": "June",
+                    "D7DW": 109.3,
+                    "D7DU": 131.3,
+                    "D7DT": 121.0,
+                    "D7DV": 124.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 109.6,
+                    "D7DU": 131.3,
+                    "D7DT": 121.4,
+                    "D7DV": 128.0
+                },
+                {
+                    "month": "August",
+                    "D7DW": 109.5,
+                    "D7DU": 131.3,
+                    "D7DT": 121.4,
+                    "D7DV": 128.0
+                },
+                {
+                    "month": "September",
+                    "D7DW": 110.1,
+                    "D7DU": 131.3,
+                    "D7DT": 121.4,
+                    "D7DV": 131.1
+                },
+                {
+                    "month": "October",
+                    "D7DW": 111.4,
+                    "D7DU": 131.3,
+                    "D7DT": 121.4,
+                    "D7DV": 127.1
+                },
+                {
+                    "month": "November",
+                    "D7DW": 112.4,
+                    "D7DU": 131.3,
+                    "D7DT": 121.4,
+                    "D7DV": 124.7
+                },
+                {
+                    "month": "December",
+                    "D7DW": 112.6,
+                    "D7DU": 140.1,
+                    "D7DT": 129.3,
+                    "D7DV": 128.4
+                }
+            ]
+        },
+        {
+            "year": "2014",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 113.3,
+                    "D7DU": 138.8,
+                    "D7DT": 129.1,
+                    "D7DV": 125.1
+                },
+                {
+                    "month": "February",
+                    "D7DW": 113.3,
+                    "D7DU": 139.1,
+                    "D7DT": 129.3,
+                    "D7DV": 125.3
+                },
+                {
+                    "month": "March",
+                    "D7DW": 113.2,
+                    "D7DU": 138.7,
+                    "D7DT": 129.1,
+                    "D7DV": 121.7
+                },
+                {
+                    "month": "April",
+                    "D7DW": 113.4,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 119.6
+                },
+                {
+                    "month": "May",
+                    "D7DW": 112.5,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 118.3
+                },
+                {
+                    "month": "June",
+                    "D7DW": 112.3,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 117.5
+                },
+                {
+                    "month": "July",
+                    "D7DW": 112.1,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 116.4
+                },
+                {
+                    "month": "August",
+                    "D7DW": 111.9,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 116.7
+                },
+                {
+                    "month": "September",
+                    "D7DW": 112.5,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 115.0
+                },
+                {
+                    "month": "October",
+                    "D7DW": 114.6,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 109.5
+                },
+                {
+                    "month": "November",
+                    "D7DW": 114.8,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 108.1
+                },
+                {
+                    "month": "December",
+                    "D7DW": 114.8,
+                    "D7DU": 138.0,
+                    "D7DT": 128.3,
+                    "D7DV": 99.3
+                }
+            ]
+        },
+        {
+            "year": "2015",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 114.6,
+                    "D7DU": 137.3,
+                    "D7DT": 128.3,
+                    "D7DV": 86.7
+                },
+                {
+                    "month": "February",
+                    "D7DW": 114.6,
+                    "D7DU": 136.4,
+                    "D7DT": 128.3,
+                    "D7DV": 91.0
+                },
+                {
+                    "month": "March",
+                    "D7DW": 114.8,
+                    "D7DU": 132.8,
+                    "D7DT": 128.3,
+                    "D7DV": 88.3
+                },
+                {
+                    "month": "April",
+                    "D7DW": 114.9,
+                    "D7DU": 132.7,
+                    "D7DT": 128.0,
+                    "D7DV": 88.5
+                },
+                {
+                    "month": "May",
+                    "D7DW": 112.5,
+                    "D7DU": 131.9,
+                    "D7DT": 128.0,
+                    "D7DV": 89.8
+                },
+                {
+                    "month": "June",
+                    "D7DW": 112.1,
+                    "D7DU": 131.9,
+                    "D7DT": 127.9,
+                    "D7DV": 87.4
+                },
+                {
+                    "month": "July",
+                    "D7DW": 112.0,
+                    "D7DU": 131.9,
+                    "D7DT": 127.9,
+                    "D7DV": 83.7
+                },
+                {
+                    "month": "August",
+                    "D7DW": 112.0,
+                    "D7DU": 131.9,
+                    "D7DT": 127.9,
+                    "D7DV": 74.4
+                },
+                {
+                    "month": "September",
+                    "D7DW": 112.4,
+                    "D7DU": 129.0,
+                    "D7DT": 127.9,
+                    "D7DV": 75.6
+                },
+                {
+                    "month": "October",
+                    "D7DW": 113.8,
+                    "D7DU": 129.0,
+                    "D7DT": 127.9,
+                    "D7DV": 75.6
+                },
+                {
+                    "month": "November",
+                    "D7DW": 114.1,
+                    "D7DU": 129.0,
+                    "D7DT": 127.9,
+                    "D7DV": 73.0
+                },
+                {
+                    "month": "December",
+                    "D7DW": 114.1,
+                    "D7DU": 129.0,
+                    "D7DT": 127.9,
+                    "D7DV": 67.3
+                }
+            ]
+        },
+        {
+            "year": "2016",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 114.1,
+                    "D7DU": 129.0,
+                    "D7DT": 127.9,
+                    "D7DV": 61.2
+                },
+                {
+                    "month": "February",
+                    "D7DW": 114.2,
+                    "D7DU": 128.1,
+                    "D7DT": 127.9,
+                    "D7DV": 58.6
+                },
+                {
+                    "month": "March",
+                    "D7DW": 114.0,
+                    "D7DU": 124.8,
+                    "D7DT": 127.9,
+                    "D7DV": 63.2
+                },
+                {
+                    "month": "April",
+                    "D7DW": 114.2,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 64.7
+                },
+                {
+                    "month": "May",
+                    "D7DW": 112.8,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 68.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 111.9,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 74.2
+                },
+                {
+                    "month": "July",
+                    "D7DW": 111.0,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 74.4
+                },
+                {
+                    "month": "August",
+                    "D7DW": 111.1,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 72.9
+                },
+                {
+                    "month": "September",
+                    "D7DW": 112.0,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 76.2
+                },
+                {
+                    "month": "October",
+                    "D7DW": 114.0,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 86.9
+                },
+                {
+                    "month": "November",
+                    "D7DW": 114.8,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 83.4
+                },
+                {
+                    "month": "December",
+                    "D7DW": 115.4,
+                    "D7DU": 123.1,
+                    "D7DT": 127.7,
+                    "D7DV": 90.6
+                }
+            ]
+        },
+        {
+            "year": "2017",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 115.7,
+                    "D7DU": 122.6,
+                    "D7DT": 127.7,
+                    "D7DV": 96.0
+                },
+                {
+                    "month": "February",
+                    "D7DW": 116.2,
+                    "D7DU": 122.6,
+                    "D7DT": 127.7,
+                    "D7DV": 94.5
+                },
+                {
+                    "month": "March",
+                    "D7DW": 116.2,
+                    "D7DU": 122.6,
+                    "D7DT": 128.9,
+                    "D7DV": 89.8
+                },
+                {
+                    "month": "April",
+                    "D7DW": 116.3,
+                    "D7DU": 121.9,
+                    "D7DT": 132.1,
+                    "D7DV": 89.9
+                },
+                {
+                    "month": "May",
+                    "D7DW": 114.8,
+                    "D7DU": 122.4,
+                    "D7DT": 137.5,
+                    "D7DV": 83.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 114.5,
+                    "D7DU": 122.4,
+                    "D7DT": 137.5,
+                    "D7DV": 82.2
+                },
+                {
+                    "month": "July",
+                    "D7DW": 114.4,
+                    "D7DU": 123.1,
+                    "D7DT": 139.2,
+                    "D7DV": 81.5
+                },
+                {
+                    "month": "August",
+                    "D7DW": 114.4,
+                    "D7DU": 123.1,
+                    "D7DT": 139.2,
+                    "D7DV": 85.3
+                },
+                {
+                    "month": "September",
+                    "D7DW": 114.4,
+                    "D7DU": 123.1,
+                    "D7DT": 139.2,
+                    "D7DV": 88.8
+                },
+                {
+                    "month": "October",
+                    "D7DW": 116.8,
+                    "D7DU": 123.1,
+                    "D7DT": 142.3,
+                    "D7DV": 89.7
+                },
+                {
+                    "month": "November",
+                    "D7DW": 118.0,
+                    "D7DU": 123.2,
+                    "D7DT": 142.3,
+                    "D7DV": 98.0
+                },
+                {
+                    "month": "December",
+                    "D7DW": 118.4,
+                    "D7DU": 123.2,
+                    "D7DT": 142.3,
+                    "D7DV": 105.6
+                }
+            ]
+        },
+        {
+            "year": "2018",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 118.6,
+                    "D7DU": 123.4,
+                    "D7DT": 142.3,
+                    "D7DV": 106.9
+                },
+                {
+                    "month": "February",
+                    "D7DW": 118.6,
+                    "D7DU": 123.4,
+                    "D7DT": 142.3,
+                    "D7DV": 105.1
+                },
+                {
+                    "month": "March",
+                    "D7DW": 119.0,
+                    "D7DU": 123.4,
+                    "D7DT": 142.3,
+                    "D7DV": 110.5
+                },
+                {
+                    "month": "April",
+                    "D7DW": 118.8,
+                    "D7DU": 123.7,
+                    "D7DT": 143.5,
+                    "D7DV": 110.9
+                },
+                {
+                    "month": "May",
+                    "D7DW": 115.6,
+                    "D7DU": 123.9,
+                    "D7DT": 143.7,
+                    "D7DV": 114.8
+                },
+                {
+                    "month": "June",
+                    "D7DW": 115.3,
+                    "D7DU": 126.9,
+                    "D7DT": 146.9,
+                    "D7DV": 113.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 116.0,
+                    "D7DU": 128.4,
+                    "D7DT": 149.4,
+                    "D7DV": 110.8
+                },
+                {
+                    "month": "August",
+                    "D7DW": 116.2,
+                    "D7DU": 128.4,
+                    "D7DT": 149.4,
+                    "D7DV": 112.2
+                },
+                {
+                    "month": "September",
+                    "D7DW": 115.8,
+                    "D7DU": 129.8,
+                    "D7DT": 152.1,
+                    "D7DV": 117.7
+                },
+                {
+                    "month": "October",
+                    "D7DW": 120.0,
+                    "D7DU": 132.5,
+                    "D7DT": 155.2,
+                    "D7DV": 126.2
+                },
+                {
+                    "month": "November",
+                    "D7DW": 119.1,
+                    "D7DU": 132.5,
+                    "D7DT": 155.2,
+                    "D7DV": 119.1
+                },
+                {
+                    "month": "December",
+                    "D7DW": 121.5,
+                    "D7DU": 132.5,
+                    "D7DT": 155.2,
+                    "D7DV": 111.6
+                }
+            ]
+        },
+        {
+            "year": "2019",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 121.5,
+                    "D7DU": 121.2,
+                    "D7DT": 147.6,
+                    "D7DV": 107.7
+                },
+                {
+                    "month": "February",
+                    "D7DW": 121.6,
+                    "D7DU": 121.4,
+                    "D7DT": 147.8,
+                    "D7DV": 110.1
+                },
+                {
+                    "month": "March",
+                    "D7DW": 121.9,
+                    "D7DU": 121.4,
+                    "D7DT": 147.8,
+                    "D7DV": 110.9
+                },
+                {
+                    "month": "April",
+                    "D7DW": 119.9,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 111.4
+                },
+                {
+                    "month": "May",
+                    "D7DW": 120.9,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 113.2
+                },
+                {
+                    "month": "June",
+                    "D7DW": 121.6,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 108.7
+                },
+                {
+                    "month": "July",
+                    "D7DW": 121.3,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 108.0
+                },
+                {
+                    "month": "August",
+                    "D7DW": 120.5,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 109.7
+                },
+                {
+                    "month": "September",
+                    "D7DW": 121.0,
+                    "D7DU": 132.6,
+                    "D7DT": 163.8,
+                    "D7DV": 109.8
+                },
+                {
+                    "month": "October",
+                    "D7DW": 122.8,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 113.8
+                },
+                {
+                    "month": "November",
+                    "D7DW": 125.8,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 110.3
+                },
+                {
+                    "month": "December",
+                    "D7DW": 126.4,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 110.4
+                }
+            ]
+        },
+        {
+            "year": "2020",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 125.3,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 114.1
+                },
+                {
+                    "month": "February",
+                    "D7DW": 126.7,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 101.5
+                },
+                {
+                    "month": "March",
+                    "D7DW": 126.7,
+                    "D7DU": 121.0,
+                    "D7DT": 160.3,
+                    "D7DV": 83.4
+                },
+                {
+                    "month": "April",
+                    "D7DW": 126.6,
+                    "D7DU": 116.6,
+                    "D7DT": 160.6,
+                    "D7DV": 64.8
+                },
+                {
+                    "month": "May",
+                    "D7DW": 126.6,
+                    "D7DU": 116.8,
+                    "D7DT": 160.6,
+                    "D7DV": 60.7
+                },
+                {
+                    "month": "June",
+                    "D7DW": 126.4,
+                    "D7DU": 116.8,
+                    "D7DT": 160.6,
+                    "D7DV": 70.9
+                },
+                {
+                    "month": "July",
+                    "D7DW": 126.9,
+                    "D7DU": 116.6,
+                    "D7DT": 160.4,
+                    "D7DV": 71.5
+                },
+                {
+                    "month": "August",
+                    "D7DW": 125.9,
+                    "D7DU": 116.6,
+                    "D7DT": 160.4,
+                    "D7DV": 71.3
+                },
+                {
+                    "month": "September",
+                    "D7DW": 127.0,
+                    "D7DU": 116.6,
+                    "D7DT": 160.4,
+                    "D7DV": 68.3
+                },
+                {
+                    "month": "October",
+                    "D7DW": 128.8,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 71.3
+                },
+                {
+                    "month": "November",
+                    "D7DW": 130.6,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 67.5
+                },
+                {
+                    "month": "December",
+                    "D7DW": 130.2,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 79.6
+                }
+            ]
+        },
+        {
+            "year": "2021",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 130.3,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 85.7
+                },
+                {
+                    "month": "February",
+                    "D7DW": 130.1,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 92.2
+                },
+                {
+                    "month": "March",
+                    "D7DW": 130.3,
+                    "D7DU": 102.4,
+                    "D7DT": 155.2,
+                    "D7DV": 94.8
+                },
+                {
+                    "month": "April",
+                    "D7DW": 130.4,
+                    "D7DU": 112.0,
+                    "D7DT": 169.4,
+                    "D7DV": 90.6
+                },
+                {
+                    "month": "May",
+                    "D7DW": 130.3,
+                    "D7DU": 112.0,
+                    "D7DT": 169.4,
+                    "D7DV": 94.8
+                },
+                {
+                    "month": "June",
+                    "D7DW": 130.6,
+                    "D7DU": 112.0,
+                    "D7DT": 169.4,
+                    "D7DV": 97.8
+                },
+                {
+                    "month": "July",
+                    "D7DW": 130.6,
+                    "D7DU": 112.0,
+                    "D7DT": 169.7,
+                    "D7DV": 98.3
+                },
+                {
+                    "month": "August",
+                    "D7DW": 130.5,
+                    "D7DU": 112.0,
+                    "D7DT": 169.7,
+                    "D7DV": 97.1
+                },
+                {
+                    "month": "September",
+                    "D7DW": 131.2,
+                    "D7DU": 112.0,
+                    "D7DT": 169.7,
+                    "D7DV": 101.5
+                },
+                {
+                    "month": "October",
+                    "D7DW": 132.6,
+                    "D7DU": 131.1,
+                    "D7DT": 184.4,
+                    "D7DV": 120.5
+                },
+                {
+                    "month": "November",
+                    "D7DW": 133.1,
+                    "D7DU": 131.1,
+                    "D7DT": 184.4,
+                    "D7DV": 125.0
+                },
+                {
+                    "month": "December",
+                    "D7DW": 136.8,
+                    "D7DU": 131.1,
+                    "D7DT": 184.4,
+                    "D7DV": 121.2
+                }
+            ]
+        },
+        {
+            "year": "2022",
+            "record": [
+                {
+                    "month": "January",
+                    "D7DW": 137.5,
+                    "D7DU": 131.3,
+                    "D7DT": 185.0,
+                    "D7DV": 125.9
+                },
+                {
+                    "month": "February",
+                    "D7DW": 140.0,
+                    "D7DU": 131.3,
+                    "D7DT": 185.0,
+                    "D7DV": 140.8
+                },
+                {
+                    "month": "March",
+                    "D7DW": 144.9,
+                    "D7DU": 131.3,
+                    "D7DT": 185.0,
+                    "D7DV": 202.8
+                },
+                {
+                    "month": "April",
+                    "D7DW": 147.8,
+                    "D7DU": 218.9,
+                    "D7DT": 260.2,
+                    "D7DV": 193.8
+                },
+                {
+                    "month": "May",
+                    "D7DW": 152.0,
+                    "D7DU": 218.9,
+                    "D7DT": 260.2,
+                    "D7DV": 211.1
+                },
+                {
+                    "month": "June",
+                    "D7DW": 159.8,
+                    "D7DU": 218.9,
+                    "D7DT": 260.2,
+                    "D7DV": 223.8
+                },
+                {
+                    "month": "July",
+                    "D7DW": 165.8,
+                    "D7DU": 219.1,
+                    "D7DT": 261.3,
+                    "D7DV": 210.4
+                },
+                {
+                    "month": "August",
+                    "D7DW": 169.5,
+                    "D7DU": 219.1,
+                    "D7DT": 261.3,
+                    "D7DV": 180.8
+                }
+            ]
+        }
+    ]
+}
