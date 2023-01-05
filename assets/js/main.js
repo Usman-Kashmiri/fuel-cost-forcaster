@@ -12,13 +12,17 @@ var yearInputField = document.getElementById('yearInput'),
 
 
 historical_mode_btn.onclick = () => {
-    historical_mode.style.display = "block";
+    historical_mode_btn.classList.add("active")
+    forcast_mode_btn.classList.remove("active")
+    historical_mode.style.display = "flex";
     forcast_mode.style.display = "none";
 }
 
 forcast_mode_btn.onclick = () => {
+    forcast_mode_btn.classList.add("active")
+    historical_mode_btn.classList.remove("active")
     historical_mode.style.display = "none";
-    forcast_mode.style.display = "block";
+    forcast_mode.style.display = "flex";
     forcast_mode.style.position = "relative";
     forcast_mode.style.visibility = "visible";
 }
@@ -324,13 +328,13 @@ function drawCharts(record) {
 
     } else {
 
-        document.getElementById('historyChartsFilters').style.display = "block"
+        document.getElementById('historyChartsFilters').style.display = "flex"
 
         historyChartsData.addColumn('string', 'Months');
-        historyChartsData.addColumn('number', 'Solid Fuels');
-        historyChartsData.addColumn('number', 'Gas');
-        historyChartsData.addColumn('number', 'Electricity');
-        historyChartsData.addColumn('number', 'Liquid Fuels');
+        historyChartsData.addColumn('number', 'Solid (D7DW)');
+        historyChartsData.addColumn('number', 'Gas (D7DU)');
+        historyChartsData.addColumn('number', 'Electricity (D7DT)');
+        historyChartsData.addColumn('number', 'Liquid (D7DV)');
 
         for (i = 0; i <= record.length; i++) {
             historyChartsData.addRows([[months[i], D7DW[i], D7DU[i], D7DT[i], D7DV[i]]]);
@@ -338,6 +342,15 @@ function drawCharts(record) {
 
 
         historyChartsOptions = {
+            annotations: {
+                textStyle: {
+                    fontSize: 12
+                }
+            },
+            legend: {
+                position: "bottom",
+                alignment: "center"
+            },
             title: 'Fuel Cost History',
             vAxis: {
                 title: 'Cost',

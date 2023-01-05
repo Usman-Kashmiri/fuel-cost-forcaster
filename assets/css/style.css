@@ -1,34 +1,217 @@
+/* setting default styling for all html tags with universal selector */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 90%;
-    padding: 20px;
+/* Declared global CSS Variables */
+:root {
+  --grey: #f8f8f8;
+  --width100: 100vw;
+  --height100: 100vh;
+}
+
+/* setting main-height & min-width for section */
+main section {
+  max-width: var(--width100);
+  min-height: var(--height100);
+}
+
+.text-transform-capitalize {
+  text-transform: capitalize;
 }
 
 #tab_switch_btns {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #historical_mode,
 #forcast_mode {
-    width: 100% !important;
+  width: 100% !important;
+  min-height: 500px;
 }
 
 #historical_mode {
-    z-index: 1;
-    position: relative;
+  z-index: 1;
+  position: relative;
 }
 
 #forcast_mode {
-    top: 0;
-    z-index: 0;
-    position: absolute;
-    visibility: hidden;
-    width: 95% !important;
+  top: 0;
+  z-index: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 95% !important;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+/* this class horizontally & vertically centers flex items */
+.flexCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+/* this class horizontally centers flex items */
+.flexCenter-x {
+  justify-content: center;
+}
+
+/* this class vertically centers flex items */
+.flexCenter-y {
+  align-items: center;
+}
+
+/* this class will set flex direction to column (vertical) */
+.flexColumn {
+  flex-direction: column;
+}
+
+.filters div {
+  display: flex;
+  align-items: center;
+}
+
+.filters {
+  flex-wrap: wrap;
+}
+
+.filters label {
+  margin-left: 5px;
+}
+
+.container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.gap10 {
+  gap: 10px;
+}
+
+.gap20 {
+  gap: 20px;
+}
+
+.gap30 {
+  gap: 30px;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.btns {
+  box-shadow: 0px 0px 6px 3px #0000005c;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.btns button {
+  padding: 8px 35px;
+  font-size: 1rem;
+  border: none;
+  background-color: white;
+}
+
+#historical_mode h2,
+#forcast_mode h2 {
+  align-self: center;
+}
+
+#historical_mode_btn {
+  z-index: 2;
+  border-radius: 8px 0 0 8px;
+  -webkit-border-radius: 8px 0 0 8px;
+  -moz-border-radius: 8px 0 0 8px;
+  -ms-border-radius: 8px 0 0 8px;
+  -o-border-radius: 8px 0 0 8px;
+}
+
+#forcast_mode_btn {
+  z-index: 1;
+  border-radius: 0 8px 8px 0;
+  -webkit-border-radius: 0 8px 8px 0;
+  -moz-border-radius: 0 8px 8px 0;
+  -ms-border-radius: 0 8px 8px 0;
+  -o-border-radius: 0 8px 8px 0;
+}
+
+button.active {
+  background-color: var(--grey);
+}
+
+/* Media Queries for small screen devices */
+
+/* This css will be implemented on screen with screen resolution less than 1080px */
+@media screen and (max-width: 1080px) {
+  .btns button {
+    padding: 8px 20px;
+  }
+  .container {
+    padding: 25px;
+  }
+  #history_charts,
+  #forcast_chart {
+    width: 1200px !important;
+  }
+  .chart-container {
+    overflow-x: scroll;
+    width: 650px;
+  }
+}
+
+/* This css will be implemented on screen with screen resolution less than 600px */
+@media screen and (max-width: 600px) {
+  section h1 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  #historical_mode h2,
+  #forcast_mode h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .btns button {
+    padding: 8px 12px;
+  }
+  #historyChartsFilters,
+  #forcastChartFilters {
+    font-size: .85rem;
+  }
+  .chart-container {
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .container {
+    padding: 20px 15px;
+  }
+  .flexColumn-sm {
+    flex-direction: column;
+  }
+  .flexEnd-sm {
+    align-items: flex-end;
+  }
 }

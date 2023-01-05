@@ -14,47 +14,69 @@
 
 <body>
     <main>
-        <section>
+        <section class="displayFlex flexColumn flexCenter gap10">
             <!-- App title -->
             <h1>Fuel Cost Forcaster</h1>
             <!-- buttons for switching between modes  -->
-            <div id="tab_switch_btns">
+            <div id="tab_switch_btns" class="btns displayFlex flexCenter">
                 <!-- button to switch to historical mode  -->
-                <button type="button" id="historical_mode_btn">History</button>
+                <button type="button" class="active" id="historical_mode_btn">History</button>
                 <!-- button to switch to forcast mode  -->
                 <button type="button" id="forcast_mode_btn">Forcast</button>
             </div>
             <!-- Historical mode tab container -->
-            <div id="historical_mode">
-                <h2>Fuel cost history</h2>
-                <input type="number" name="year" onchange="getValue()" value="2022" id="yearInput"><br><br>
-                <div id="historyChartsFilters">
-                    <input class="fuelFilters" type="checkbox" value="1" checked />
-                    <label for="d7dwFilter">Solid Fuel</label>
-                    <input class="fuelFilters" type="checkbox" value="2" checked />
-                    <label for="d7duFilter">Gas</label>
-                    <input class="fuelFilters" type="checkbox" value="3" checked />
-                    <label for="d7dtFilter">Electricity</label>
-                    <input class="fuelFilters" type="checkbox" value="4" checked />
-                    <label for="d7dvFilter">Liquid Fuel</label>
+            <div id="historical_mode" class="displayFlex flexColumn container gap30">
+                <h2 class="text-transform-capitalize">Fuel cost history</h2>
+                <div class="displayFlex justify-content-between flexColumn-sm flexEnd-sm gap10">
+                    <div class="filters gap10" id="historyChartsFilters">
+                        <div>
+                            <input class="fuelFilters" type="checkbox" value="1" checked />
+                            <label for="d7dwFilter">Solid Fuel</label>
+                        </div>
+                        <div>
+                            <input class="fuelFilters" type="checkbox" value="2" checked />
+                            <label for="d7duFilter">Gas</label>
+                        </div>
+                        <div>
+                            <input class="fuelFilters" type="checkbox" value="3" checked />
+                            <label for="d7dtFilter">Electricity</label>
+                        </div>
+                        <div>
+                            <input class="fuelFilters" type="checkbox" value="4" checked />
+                            <label for="d7dvFilter">Liquid Fuel</label>
+                        </div>
+                    </div>
+                    <input type="number" name="year" onchange="getValue()" value="2022" id="yearInput">
                 </div>
-                <div id="history_charts" style="width: 100%; height: 500px;"></div>
+                <div class="chart-container">
+                    <div id="history_charts"></div>
+                </div>
             </div>
             <!-- Historical mode tab container -->
 
-            <div id="forcast_mode">
-                <h2>Fuel cost forcast for next 12 months</h2>
-                <div id="forcastChartFilters">
-                    <input class="forcastFuelFilters" type="checkbox" value="1" checked />
-                    <label for="d7dwFilter">Solid Fuel</label>
-                    <input class="forcastFuelFilters" type="checkbox" value="2" checked />
-                    <label for="d7duFilter">Gas</label>
-                    <input class="forcastFuelFilters" type="checkbox" value="3" checked />
-                    <label for="d7dtFilter">Electricity</label>
-                    <input class="forcastFuelFilters" type="checkbox" value="4" checked />
-                    <label for="d7dvFilter">Liquid Fuel</label>
+            <div id="forcast_mode" class="displayFlex flexColumn container gap30">
+                <h2 class="text-transform-capitalize">Fuel cost forcast for next 12 months</h2>
+                <div class="filters displayFlex gap10" id="forcastChartFilters">
+                    <div>
+                        <input class="forcastFuelFilters" type="checkbox" value="1" checked />
+                        <label for="d7dwFilter">Solid Fuel</label>
+                    </div>
+                    <div>
+                        <input class="forcastFuelFilters" type="checkbox" value="2" checked />
+                        <label for="d7duFilter">Gas</label>
+                    </div>
+                    <div>
+                        <input class="forcastFuelFilters" type="checkbox" value="3" checked />
+                        <label for="d7dtFilter">Electricity</label>
+                    </div>
+                    <div>
+                        <input class="forcastFuelFilters" type="checkbox" value="4" checked />
+                        <label for="d7dvFilter">Liquid Fuel</label>
+                    </div>
                 </div>
-                <div id="forcast_chart" style="width: 100%; height: 500px;"></div>
+                <div class="chart-container">
+                    <div id="forcast_chart"></div>
+                </div>
             </div>
         </section>
     </main>
@@ -62,7 +84,7 @@
     <!-- Linked Javascript -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- <script type="module" src="assets/js/importJsonData.js"></script> -->
-    <script type="text/javascript" src="assets/js/example.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>
