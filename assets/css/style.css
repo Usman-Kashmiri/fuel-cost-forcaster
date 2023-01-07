@@ -14,46 +14,13 @@
 
 /* Declared global CSS Variables */
 :root {
-  --grey: #f8f8f8;
+  --grey: #ebe9e9;
   --width100: 100vw;
   --height100: 100vh;
 }
 
-/* setting main-height & min-width for section */
-main section {
-  max-width: var(--width100);
-  min-height: var(--height100);
-}
-
-section h1 {
-  margin-top: 20px;
-}
-
 .text-transform-capitalize {
   text-transform: capitalize;
-}
-
-#tab_switch_btns {
-  margin-top: 20px;
-}
-
-#historical_mode,
-#forcast_mode {
-  width: 100% !important;
-  min-height: 500px;
-}
-
-#historical_mode {
-  z-index: 1;
-  position: relative;
-}
-
-#forcast_mode {
-  top: 0;
-  z-index: 0;
-  position: absolute;
-  visibility: hidden;
-  width: 95% !important;
 }
 
 .displayFlex {
@@ -66,32 +33,13 @@ section h1 {
   align-items: center;
 }
 
-/* this class horizontally centers flex items */
-.flexCenter-x {
-  justify-content: center;
-}
-
-/* this class vertically centers flex items */
-.flexCenter-y {
-  align-items: center;
-}
-
 /* this class will set flex direction to column (vertical) */
 .flexColumn {
   flex-direction: column;
 }
 
-.filters div {
-  display: flex;
-  align-items: center;
-}
-
-.filters {
-  flex-wrap: wrap;
-}
-
-.filters label {
-  margin-left: 5px;
+.width100p {
+  width: 100%;
 }
 
 .container {
@@ -120,29 +68,21 @@ section h1 {
   justify-content: space-between;
 }
 
-.background-transparent {
-  background-color: transparent;
+/* setting main-height & min-width for section */
+main section {
+  max-width: var(--width100);
+  min-height: var(--height100);
 }
 
-.btns {
-  box-shadow: 0px 0px 6px 3px #0000005c;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+/* App heading */
+section h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
 }
 
-.btns button {
-  padding: 8px 35px;
-  font-size: 1rem;
-  border: none;
-  background-color: white;
-}
-
-#historical_mode h2,
-#forcast_mode h2 {
-  align-self: center;
+/* Css for tab switch buttons */
+#tab_switch_btns {
+  margin-top: 20px;
 }
 
 #historical_mode_btn {
@@ -163,9 +103,68 @@ section h1 {
   -o-border-radius: 0 8px 8px 0;
 }
 
+.btns {
+  box-shadow: 0px 0px 6px 3px #0000005c;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.btns button {
+  cursor: pointer;
+  padding: 8px 35px;
+  font-size: 1rem;
+  border: none;
+  background-color: white;
+}
+
 button.active {
   background-color: var(--grey);
 }
+
+/* CSS for Filters */
+
+.filters div {
+  display: flex;
+  align-items: center;
+}
+
+.filters {
+  flex-wrap: wrap;
+}
+
+.filters label {
+  margin-left: 5px;
+}
+
+
+/* CSS for charts */
+#historical_mode,
+#forcast_mode {
+  width: 100% !important;
+  min-height: 500px;
+}
+
+#historical_mode {
+  z-index: 1;
+  position: relative;
+}
+
+#forcast_mode {
+  top: 0;
+  z-index: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 95% !important;
+}
+
+#historical_mode h2,
+#forcast_mode h2 {
+  align-self: center;
+}
+
 
 /* Media Queries for small screen devices */
 

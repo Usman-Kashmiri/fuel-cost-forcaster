@@ -15,19 +15,28 @@
 <body>
     <main>
         <section class="displayFlex flexColumn flexCenter gap10">
+            
             <!-- App title -->
             <h1>Fuel Cost Forcaster</h1>
+            
             <!-- buttons for switching between modes  -->
             <div id="tab_switch_btns" class="btns displayFlex flexCenter">
+                
                 <!-- button to switch to historical mode  -->
                 <button type="button" class="active" id="historical_mode_btn">History</button>
+                
                 <!-- button to switch to forcast mode  -->
                 <button type="button" id="forcast_mode_btn">Forcast</button>
             </div>
+
             <!-- Historical mode tab container -->
             <div id="historical_mode" class="displayFlex flexColumn container gap30">
+                
+                <!-- Tab title -->
                 <h2 class="text-transform-capitalize">Fuel cost history</h2>
-                <div class="displayFlex justify-content-between flexColumn-sm flexEnd-sm gap10">
+                
+                <!-- Filters Container -->
+                <div class="displayFlex width100p justify-content-between flexColumn-sm flexEnd-sm gap10">
                     <div class="filters gap10" id="historyChartsFilters">
                         <div>
                             <input class="fuelFilters" type="checkbox" value="1" checked />
@@ -46,16 +55,27 @@
                             <label for="d7dvFilter">Liquid Fuel</label>
                         </div>
                     </div>
+
+                    <!-- History charts will change data with this input field -->
                     <input type="number" name="year" onchange="getValue()" value="2022" id="yearInput">
                 </div>
+
+                <!-- Chart Container -->
                 <div class="chart-container">
+                    
+                    <!-- Fuel History Chart will render here -->
                     <div id="history_charts"></div>
                 </div>
             </div>
-            <!-- Historical mode tab container -->
+
+            <!-- Forcast mode tab container -->
 
             <div id="forcast_mode" class="displayFlex flexColumn container gap30">
+                
+                <!-- Tab title -->
                 <h2 class="text-transform-capitalize">Fuel cost forcast for next 12 months</h2>
+
+                <!-- Filters Container -->
                 <div class="filters displayFlex gap10" id="forcastChartFilters">
                     <div>
                         <input class="forcastFuelFilters" type="checkbox" value="1" checked />
@@ -74,16 +94,23 @@
                         <label for="d7dvFilter">Liquid Fuel</label>
                     </div>
                 </div>
+
+                <!-- Chart Container -->
                 <div class="chart-container">
+
+                    <!-- Forcast Chart will render here -->
                     <div id="forcast_chart"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Linked Javascript -->
+    <!-- Javascript -->
+    
+    <!-- Google Charts CDN -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- <script type="module" src="assets/js/importJsonData.js"></script> -->
+    
+    <!-- Linked Javascript -->
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 

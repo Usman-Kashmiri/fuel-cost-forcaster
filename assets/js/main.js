@@ -1,40 +1,68 @@
-// variables to get dom elements
 
-var yearInputField = document.getElementById('yearInput'),
-    historical_mode = document.getElementById('historical_mode'),
-    forcast_mode = document.getElementById('forcast_mode'),
-    historical_mode_btn = document.getElementById('historical_mode_btn'),
-    forcast_mode_btn = document.getElementById('forcast_mode_btn'),
-    fuelFilters = document.getElementsByClassName('fuelFilters'),
-    forcastFuelFilters = document.getElementsByClassName('forcastFuelFilters');
+// variables to get dom elements
+var yearInputField = document.getElementById('yearInput'), // History charts will change with this input field
+    historical_mode = document.getElementById('historical_mode'), // History mode tab
+    forcast_mode = document.getElementById('forcast_mode'), // Forcast mode tab
+    historical_mode_btn = document.getElementById('historical_mode_btn'), // History mode switch button
+    forcast_mode_btn = document.getElementById('forcast_mode_btn'), // Forcast mode switch button
+    fuelFilters = document.getElementsByClassName('fuelFilters'), // History fuel filters
+    forcastFuelFilters = document.getElementsByClassName('forcastFuelFilters'); // Forcast Fuel Filters
+
+// JSON file path
+const url = `assets/js/fuelCostData.json`;
 
 // Functions for switching between modes
 
-
+// On click function for switching to history mode
 historical_mode_btn.onclick = () => {
+
+    // this adds active class to history tab switch button
     historical_mode_btn.classList.add("active")
+    // and this removes active class from forcast tab switch button
     forcast_mode_btn.classList.remove("active")
+
+    // to change display of history mode
     historical_mode.style.display = "flex";
     forcast_mode.style.display = "none";
 }
 
+// On click function for switching to forcast mode
 forcast_mode_btn.onclick = () => {
+
+    // this adds active class to forcast tab switch button
     forcast_mode_btn.classList.add("active")
+    // and this removes active class from history tab switch button
     historical_mode_btn.classList.remove("active")
+
+    // to make forcast tab visible visible and hide history tab
     historical_mode.style.display = "none";
     forcast_mode.style.display = "flex";
+
+    /* Had to set forcast mode's display to flex else the forcast chart
+    else the chart who's display set to none initially doesn't renders properly */
+
+    // Initially forcast mode's position is set to absolute in style.css
+    // this will set forcast mode's position to relative
     forcast_mode.style.position = "relative";
+
+    // Initially focast mode's visibility is set to hidden in style.css
+    // this will set forcast mode's visibility to visible
     forcast_mode.style.visibility = "visible";
 }
 
+
+// This async await function fetches fuel cost data that is stored in a JSON file
 async function fetchData() {
-    var index = 1;
-    const url = `assets/js/fuelCostData.json`;
+
+    // Storing the fetched data into a constant
     const response = await fetch(url);
+    
+    // Parsing the fetched data into json format
     const data = await response.json();
-    // console.log(data.fuelCostData[index])
+    
     return data;
 }
+
 
 // Global Scopes: variables that are initialized outside of a function are global variables or scopes
 
@@ -290,7 +318,10 @@ function drawCharts(record) {
 
     if (yearInputField.value < 1996 || yearInputField.value > 2022) {
 
-        document.getElementById('historyChartsFilters').style.display = "none"
+        var filters = document.querySelectorAll('#historyChartsFilters div');
+        for (let index = 0; index < filters.length; index++) {
+            filters[index].style.display = "none";
+        }
 
         historyChartsData.addColumn({ label: 'months', type: 'string' });
         historyChartsData.addColumn({ label: 'cost', type: 'number' });
