@@ -1,70 +1,70 @@
 
-// variables to get dom elements
-var yearInputField = document.getElementById('yearInput'), // History charts will change with this input field
-    historical_mode = document.getElementById('historical_mode'), // History mode tab
-    forcast_mode = document.getElementById('forcast_mode'), // Forcast mode tab
-    historical_mode_btn = document.getElementById('historical_mode_btn'), // History mode switch button
-    forcast_mode_btn = document.getElementById('forcast_mode_btn'), // Forcast mode switch button
-    fuelFilters = document.getElementsByClassName('fuelFilters'), // History fuel filters
-    forcastFuelFilters = document.getElementsByClassName('forcastFuelFilters'); // Forcast Fuel Filters
+// variables to get dom elements.
+var yearInputField = document.getElementById('yearInput'), // History charts will change with this input field.
+    historical_mode = document.getElementById('historical_mode'), // History mode tab.
+    forcast_mode = document.getElementById('forcast_mode'), // Forcast mode tab.
+    historical_mode_btn = document.getElementById('historical_mode_btn'), // History mode switch button.
+    forcast_mode_btn = document.getElementById('forcast_mode_btn'), // Forcast mode switch button.
+    fuelFilters = document.getElementsByClassName('fuelFilters'), // History fuel filters.
+    forcastFuelFilters = document.getElementsByClassName('forcastFuelFilters'); // Forcast Fuel Filters.
 
-// JSON file path
+// JSON file path.
 const url = `assets/js/fuelCostData.json`;
 
-// Functions for switching between modes
+// Functions for switching between modes.
 
-// On click function for switching to history mode
+// On click function for switching to history mode.
 historical_mode_btn.onclick = () => {
 
-    // this adds active class to history tab switch button
+    // this adds active class to history tab switch button.
     historical_mode_btn.classList.add("active")
-    // and this removes active class from forcast tab switch button
+    // and this removes active class from forcast tab switch button.
     forcast_mode_btn.classList.remove("active")
 
-    // to change display of history mode
+    // to change display of history mode.
     historical_mode.style.display = "flex";
     forcast_mode.style.display = "none";
 }
 
-// On click function for switching to forcast mode
+// On click function for switching to forcast mode.
 forcast_mode_btn.onclick = () => {
 
-    // this adds active class to forcast tab switch button
+    // this adds active class to forcast tab switch button.
     forcast_mode_btn.classList.add("active")
-    // and this removes active class from history tab switch button
+    // and this removes active class from history tab switch button.
     historical_mode_btn.classList.remove("active")
 
-    // to make forcast tab visible visible and hide history tab
+    // to make forcast tab visible visible and hide history tab.
     historical_mode.style.display = "none";
     forcast_mode.style.display = "flex";
 
     /* Had to set forcast mode's display to flex else the forcast chart
-    else the chart who's display set to none initially doesn't renders properly */
+    else the chart who's display set to none initially doesn't renders properly. */
 
     // Initially forcast mode's position is set to absolute in style.css
-    // this will set forcast mode's position to relative
+    // this will set forcast mode's position to relative.
     forcast_mode.style.position = "relative";
 
     // Initially focast mode's visibility is set to hidden in style.css
-    // this will set forcast mode's visibility to visible
+    // this will set forcast mode's visibility to visible.
     forcast_mode.style.visibility = "visible";
 }
 
 
-// This async await function fetches fuel cost data that is stored in a JSON file
+// This async await function fetches fuel cost data that is stored in a JSON file.
 async function fetchData() {
 
-    // Storing the fetched data into a constant
+    // Storing the fetched data into a constant.
     const response = await fetch(url);
-    
-    // Parsing the fetched data into json format
+
+    // Parsing the fetched data into json format.
     const data = await response.json();
-    
+
     return data;
 }
 
 
-// Global Scopes: variables that are initialized outside of a function are global variables or scopes
+// Global Scopes: variables that are initialized outside of a function are global variables or scopes.
 
 var months,
     D7DW,
@@ -78,11 +78,16 @@ var months,
     forcastD7DTCost,
     forcastD7DVCost;
 
+// This function will get year input field's value to change history charts on onchange event listener.
+
 function getValue() {
 
+    // calling the fetchData() function we declared above.
     fetchData().then(data => {
+
         var index;
 
+        // this switch case statement will check input field's value and will assign index variable respectively.
         switch (yearInputField.value) {
             case '1996':
                 index = 0;
@@ -171,150 +176,223 @@ function getValue() {
                 break;
         }
 
+        // Storing data of year 2021 & 2022 to merge them into one array.
+        // because year 2022 has fewer data than 12 months.
         const dataOf22 = data.fuelCostData[26].record;
         const dataOf21 = data.fuelCostData[25].record;
+
+        // the silce method will only get us last 12 months data.
         const twelveMonthsData = (dataOf21.concat(dataOf22)).slice(-12);
 
+        // mapping all the years into a constant array.
+        // this const hasn't not been used, yet it is here... if ever needed.
         const years = data.fuelCostData.map(
-            function (index) {
-                return index.year;
+            (i) => {
+                return i.year;
             }
         );
 
+
+        // as per switch case statement declared above inndex for year 2022 will be 26
+        // this condition gets ready data for previous 12 months.
         if (index == 26) {
+
+            // mapping all the previous 12 months' names into an array.
             months = twelveMonthsData.map(
-                function (index) {
-                    return index.month;
+                (i) => {
+                    return i.month;
                 }
             );
 
+            // mapping all the previous 12 months' solid fuel cost data into an array.
             D7DW = twelveMonthsData.map(
-                function (index) {
-                    return index.D7DW;
+                (i) => {
+                    return i.D7DW;
                 }
             );
 
+            // mapping all the previous 12 months' gas fuel cost data into an array.
             D7DU = twelveMonthsData.map(
-                function (index) {
-                    return index.D7DU;
+                (i) => {
+                    return i.D7DU;
                 }
             );
 
+            // mapping all the previous 12 months' electricity fuel cost data into an array.
             D7DT = twelveMonthsData.map(
-                function (index) {
-                    return index.D7DT;
+                (i) => {
+                    return i.D7DT;
                 }
             );
 
+            // mapping all the previous 12 months' liquid fuel cost data into an array.
             D7DV = twelveMonthsData.map(
-                function (index) {
-                    return index.D7DV;
+                (i) => {
+                    return i.D7DV;
                 }
             );
 
-        } else {
+        }
+
+        // this else statement gets ready data for each year respectively.
+        else {
+
+            // mapping all months' name into an array.
             months = data.fuelCostData[index].record.map(
-                function (index) {
-                    return index.month;
+                (i) => {
+                    return i.month;
                 }
             );
+
+            // mapping all months' solid fuel cost data into an array.
             D7DW = data.fuelCostData[index].record.map(
-                function (index) {
-                    return index.D7DW;
+                (i) => {
+                    return i.D7DW;
                 }
             );
+
+            // mapping all months' gas fuel cost data into an array.
             D7DU = data.fuelCostData[index].record.map(
-                function (index) {
-                    return index.D7DU;
+                (i) => {
+                    return i.D7DU;
                 }
             );
+
+            // mapping all months' electricity fuel cost data into an array.
             D7DT = data.fuelCostData[index].record.map(
-                function (index) {
-                    return index.D7DT;
+                (i) => {
+                    return i.D7DT;
                 }
             );
+
+            // mapping all months' liquid fuel cost data into an array.
             D7DV = data.fuelCostData[index].record.map(
-                function (index) {
-                    return index.D7DV;
+                (i) => {
+                    return i.D7DV;
                 }
             );
         }
 
-        // For forcasting
+        // Calculations for forcasting fuel cast for next 12 months
 
-        // Growth rate of for each fuel type:
+        /*
+        
+        using straight line method for forcasting.
 
-        var growthRateOfD7DW = (twelveMonthsData[11].D7DW - twelveMonthsData[0].D7DW) / 12;
-        var growthRateOfD7DU = (twelveMonthsData[11].D7DU - twelveMonthsData[0].D7DU) / 12;
-        var growthRateOfD7DT = (twelveMonthsData[11].D7DT - twelveMonthsData[0].D7DT) / 12;
-        var growthRateOfD7DV = (twelveMonthsData[11].D7DV - twelveMonthsData[0].D7DV) / 12;
+        what is straight line forcasting method?
+         
+        Forecasting future revenue involves multiplying a company's previous year's revenue by its growth rate.
+        For example, if the previous year's growth rate was 12 percent, straight-line forecasting assumes it'll continue to grow by 12 percent next year.
 
-        // rounding off growthRate to 1 decimal point
+        */
 
+        // Determinig growth rate for each fuel type:
+
+        /* to determine growth rate, substracting the first month fuel cost from last month fuel cost of each fuel
+        and then dividing the total by total numbers of month i.e 12 */
+
+        // growth rate of solid fuel.
+        var growthRateOfD7DW = (twelveMonthsData[11].D7DW - twelveMonthsData[0].D7DW) / 12,
+
+            // growth rate of gas fuel.
+            growthRateOfD7DU = (twelveMonthsData[11].D7DU - twelveMonthsData[0].D7DU) / 12,
+
+            // growth rate of electricity fuel.
+            growthRateOfD7DT = (twelveMonthsData[11].D7DT - twelveMonthsData[0].D7DT) / 12,
+
+            // growth rate of liquid fuel.
+            growthRateOfD7DV = (twelveMonthsData[11].D7DV - twelveMonthsData[0].D7DV) / 12;
+
+
+        // rounding off growthRates to 1 decimal point
         function roundOff(value) {
             var multiplier = Math.pow(10, 1);
             return Math.round(value * multiplier) / multiplier;
         }
 
-
+        // mapping forcast data in an array
         forcastData = twelveMonthsData.map(
+            // passing to parameters in map function, here i stores every value as an object and j is just a iteration counter variable
             (i, j) => {
                 return {
+                    // because here j starts form 0 and ends at 11 so adding 1 to j to get right months names
+                    // the forcast months names will be as month 1, month 2, month 3 and so on...
                     month: `month ${j + 1}`,
+
+                    // mapping next 12 months' solid fuel cost data into an array.
                     D7DW: roundOff(parseFloat(twelveMonthsData[11].D7DW) + (`${j + 1}` * growthRateOfD7DW)),
+
+                    // mapping next 12 months' gas fuel cost data into an array.
                     D7DU: roundOff(parseFloat(twelveMonthsData[11].D7DU) + (`${j + 1}` * growthRateOfD7DU)),
+
+                    // mapping next 12 months' electricity fuel cost data into an array.
                     D7DT: roundOff(parseFloat(twelveMonthsData[11].D7DT) + (`${j + 1}` * growthRateOfD7DT)),
+
+                    // mapping next 12 months' liquid fuel cost data into an array.
                     D7DV: roundOff(parseFloat(twelveMonthsData[11].D7DV) + (`${j + 1}` * growthRateOfD7DV)),
                 }
             });
 
+        // now, separating forcast months names and mapping them into an array.
         forcastMonthNames = forcastData.map(
             (i) => {
                 return i.month;
             }
         );
 
+        // separating forcast solid fuel cost and mapping them into an array.
         forcastD7DWCost = forcastData.map(
             (i) => {
                 return i.D7DW;
             }
         );
 
+        // separating forcast gas fuel cost and mapping them into an array.
         forcastD7DUCost = forcastData.map(
             (i) => {
                 return i.D7DU;
             }
         );
 
+        // separating forcast electricity fuel cost and mapping them into an array.
         forcastD7DTCost = forcastData.map(
             (i) => {
                 return i.D7DT;
             }
         );
 
+        // separating forcast liquid fuel cost and mapping them into an array.
         forcastD7DVCost = forcastData.map(
             (i) => {
                 return i.D7DV;
             }
         );
 
-        drawCharts(data.fuelCostData[0].record)
+        // calling drawCharts() function and passing array length (i.e 12) in the parameter.
+
+        arrayLength = data.fuelCostData[0].record.length;
+
+        drawCharts(arrayLength)
     });
 
 }
 
+// this code blocks loads google charts
 google.charts.load('current', { 'packages': ['corechart'] });
+
+// this code calls the getValue() function on web-page load.
 google.charts.setOnLoadCallback(() => { getValue() });
 
-function drawCharts(record) {
+// the drawCharts() function that will render the charts
+function drawCharts(recordLength) {
 
-    var historyChartsData = new google.visualization.DataTable();
+    var historyChartsData = new google.visualization.DataTable(),
 
-    var historyCharts = new google.visualization.ColumnChart(document.getElementById('history_charts'));
+        historyCharts = new google.visualization.ColumnChart(document.getElementById('history_charts')),
 
-    var forcastChart = new google.visualization.ColumnChart(document.getElementById('forcast_chart'));
+        forcastChart = new google.visualization.ColumnChart(document.getElementById('forcast_chart')),
 
-    var historyChartsOptions, forcastChartOptions
+        historyChartsOptions, forcastChartOptions;
 
     if (yearInputField.value < 1996 || yearInputField.value > 2022) {
 
@@ -367,7 +445,7 @@ function drawCharts(record) {
         historyChartsData.addColumn('number', 'Electricity (D7DT)');
         historyChartsData.addColumn('number', 'Liquid (D7DV)');
 
-        for (i = 0; i <= record.length; i++) {
+        for (i = 0; i <= recordLength; i++) {
             historyChartsData.addRows([[months[i], D7DW[i], D7DU[i], D7DT[i], D7DV[i]]]);
         }
 
@@ -438,7 +516,7 @@ function drawCharts(record) {
     forcastChartData.addColumn('number', 'Electricity');
     forcastChartData.addColumn('number', 'Liquid Fuels');
 
-    for (i = 0; i <= record.length; i++) {
+    for (i = 0; i <= recordLength; i++) {
         forcastChartData.addRows([[forcastMonthNames[i], forcastD7DWCost[i], forcastD7DUCost[i], forcastD7DTCost[i], forcastD7DVCost[i]]]);
     }
 
@@ -471,9 +549,9 @@ function drawCharts(record) {
     // forcastChart.draw(forcastChartData, forcastChartOptions)
 
     function drawForcastChart() {
-        var chartColors = [];
-        var chartColumns = [0];
-        var forcastChartView = new google.visualization.DataView(forcastChartData);
+        var chartColors = [],
+            chartColumns = [0],
+            forcastChartView = new google.visualization.DataView(forcastChartData);
         Array.from(forcastFuelFilters).forEach((forcastFuelFilters) => {
             var seriesColumn = parseInt(forcastFuelFilters.value);
             if (forcastFuelFilters.checked) {
