@@ -157,7 +157,6 @@ button.active {
   z-index: 0;
   position: absolute;
   visibility: hidden;
-  width: 95% !important;
 }
 
 #historical_mode h2,
