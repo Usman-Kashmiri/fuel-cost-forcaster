@@ -1,4 +1,3 @@
-
 // variables to get dom elements.
 var yearInputField = document.getElementById('yearInput'), // History charts will change with this input field.
     historical_mode = document.getElementById('historical_mode'), // History mode tab.
@@ -7,7 +6,15 @@ var yearInputField = document.getElementById('yearInput'), // History charts wil
     forcast_mode_btn = document.getElementById('forcast_mode_btn'), // Forcast mode switch button.
     fuelFilters = document.getElementsByClassName('fuelFilters'), // History fuel filters.
     forcastFuelFilters = document.getElementsByClassName('forcastFuelFilters'), // Forcast Fuel Filters.
-    filters = document.querySelectorAll('#historyChartsFilters div'); // fuel filters
+    filters = document.querySelectorAll('#historyChartsFilters div'), // fuel filters
+    colors = ['#41DA96', '#E6AC2B', '#71EB92', '#FAAFF9'];
+
+// this arrow function will retain bars' colors when switching fuel filters on/off:
+const retainChartColors = (chartData) => {
+    colors.forEach((color, index) => {
+        chartData.setColumnProperty(index + 1, 'color', color);
+    });
+}
 
 // JSON file path.
 const url = `assets/js/fuelCostData.json`;
@@ -77,7 +84,11 @@ var months, // for mapping months.
     forcastD7DWCost, // for mapping forcast solid type fuel cost values.
     forcastD7DUCost, // for mapping forcast gas fuel cost values.
     forcastD7DTCost, // for mapping forcast electricity fuel cost values.
-    forcastD7DVCost; // for mapping forcast liquid type fuel cost values.
+    forcastD7DVCost, // for mapping forcast liquid type fuel cost values.
+    dataOf21, // for storing data of year 2021
+    dataOf22, // for storing data of year 2022
+    twelveMonthsData, // for iterating data of twelve months only out of year 2021 & 2022 combined
+    recordLength; // for storing the length of total number of records per year.
 
 // This function will get year input field's value to change history charts on onchange event listener.
 
@@ -179,11 +190,11 @@ function getValue() {
 
         // Storing data of year 2021 & 2022 to merge them into one array.
         // because year 2022 has fewer data than 12 months.
-        const dataOf22 = data.fuelCostData[26].record;
-        const dataOf21 = data.fuelCostData[25].record;
+        dataOf22 = data.fuelCostData[26].record;
+        dataOf21 = data.fuelCostData[25].record;
 
         // the silce method will only get us last 12 months data.
-        const twelveMonthsData = (dataOf21.concat(dataOf22)).slice(-12);
+        twelveMonthsData = (dataOf21.concat(dataOf22)).slice(-12);
 
         // mapping all the years into a constant array.
         // this const hasn't not been used, yet it is here... if ever needed.
@@ -274,6 +285,149 @@ function getValue() {
             );
         }
 
+
+        // calling drawCharts() function and passing array length (i.e 12) in the parameter.
+
+        arrayLength = data.fuelCostData[0].record.length;
+
+        drawCharts(arrayLength)
+    });
+
+}
+
+// this code blocks loads google charts
+google.charts.load('current', { 'packages': ['corechart'] });
+
+// this code calls the getValue() function on web-page load.
+google.charts.setOnLoadCallback(() => { getValue() });
+google.charts.setOnLoadCallback(() => { ForcastChart() });
+
+// the drawCharts() function that will render the charts
+function drawCharts(recordLength) {
+
+    // creating Data Table for history charts using methods provided by Google Charts
+    var historyChartsData = new google.visualization.DataTable(),
+
+        // using column charts (aka vertical bar chart).
+
+        // for history charts.
+        historyCharts = new google.visualization.ColumnChart(document.getElementById('history_charts')),
+
+        // variables which are going to be reassigned later.
+        historyChartsOptions;
+
+    /* In-case the user tries to scroll behind 1996 or beyond 2022
+    then this condition will render a chart with an error of no data available */
+    if (yearInputField.value < 1996 || yearInputField.value > 2022) {
+
+        // this block of code will hide all the filters if there is no data available
+        for (let index = 0; index < filters.length; index++) {
+            filters[index].style.display = "none";
+        }
+
+        // this is what to render if there is no data
+        historyChartsData.addColumn({ label: 'months', type: 'string' });
+        historyChartsData.addColumn({ label: 'cost', type: 'number' });
+        historyChartsData.addColumn('number', 'Solid Fuels');
+        historyChartsData.addColumn({ role: 'annotation', type: 'string' });
+        historyChartsData.addColumn('number', 'Gas');
+
+        historyChartsData.addRows([['', 0, 0, 'No Data Available', 0]]);
+
+        // Chart options
+        historyChartsOptions = {
+            title: 'Fuel Cost History',
+            annotations: {
+                stem: {
+                    color: 'transparent',
+                    length: 150
+                },
+                textStyle: {
+                    color: 'red',
+                    fontSize: 32
+                }
+            },
+            vAxis: {
+                title: 'Cost',
+                minValue: 0,
+                maxValue: 300,
+                format: 'decimal'
+            },
+            hAxis: {
+                title: 'Months'
+            },
+            legend: { position: 'none' }
+        };
+
+        // calling the draw function and passing chart data and chart options in parameters.
+        historyCharts.draw(historyChartsData, historyChartsOptions);
+
+    } else {
+
+        // this block of code will show all the fuel filters if there data available.
+        for (let index = 0; index < filters.length; index++) {
+            filters[index].style.display = "block";
+        }
+
+        // setting history charts columns.
+        historyChartsData.addColumn('string', 'Months');
+        historyChartsData.addColumn('number', 'Solid (D7DW)');
+        historyChartsData.addColumn('number', 'Gas (D7DU)');
+        historyChartsData.addColumn('number', 'Electricity (D7DT)');
+        historyChartsData.addColumn('number', 'Liquid (D7DV)');
+
+        // iterating fuel cost data using for-loop into DataTable rows.
+        for (i = 0; i <= recordLength; i++) {
+            historyChartsData.addRows([[months[i], D7DW[i], D7DU[i], D7DT[i], D7DV[i]]]);
+        }
+
+        // console.log(historyChartsData)
+
+        // History charts options:
+        historyChartsOptions = {
+            legend: {
+                position: "bottom",
+                alignment: "center"
+            },
+            title: 'Fuel Cost History',
+            vAxis: {
+                title: 'Cost',
+                format: 'decimal'
+            },
+            hAxis: {
+                title: 'Months',
+                slantedText: true
+            },
+            height: 600,
+            colors: colors
+        };
+    }
+
+    // calling the retainChartColors() function:
+    retainChartColors(historyChartsData);
+
+    // draw method is provided by google charts library to draw the chart:
+    historyCharts.draw(historyChartsData, historyChartsOptions);
+
+    // calling the filterChart() function:
+    filterChart(historyChartsData, fuelFilters, historyChartsOptions, historyCharts)
+
+}
+
+// an arrow function for forcast data logic:
+const forcastChartLogic = () => {
+
+    // calling the fetchData() function we declared above.
+    fetchData().then(data => {
+
+        // Storing data of year 2021 & 2022 to merge them into one array.
+        // because year 2022 has fewer data than 12 months.
+        dataOf22 = data.fuelCostData[26].record;
+        dataOf21 = data.fuelCostData[25].record;
+
+        // the silce method will only get us last 12 months data.
+        twelveMonthsData = (dataOf21.concat(dataOf22)).slice(-12);
+
         // Calculations for forcasting fuel cast for next 12 months
 
         /*
@@ -293,6 +447,7 @@ function getValue() {
         and then dividing the total by total numbers of month i.e 12 */
 
         // growth rate of solid fuel.
+
         var growthRateOfD7DW = (twelveMonthsData[11].D7DW - twelveMonthsData[0].D7DW) / 12,
 
             // growth rate of gas fuel.
@@ -370,174 +525,23 @@ function getValue() {
         );
 
         // calling drawCharts() function and passing array length (i.e 12) in the parameter.
+        recordLength = data.fuelCostData[0].record.length;
 
-        arrayLength = data.fuelCostData[0].record.length;
-
-        drawCharts(arrayLength)
     });
-
 }
 
-// this code blocks loads google charts
-google.charts.load('current', { 'packages': ['corechart'] });
+// calling the forcastChartLofic()
+forcastChartLogic();
 
-// this code calls the getValue() function on web-page load.
-google.charts.setOnLoadCallback(() => { getValue() });
+function ForcastChart() {
 
-// the drawCharts() function that will render the charts
-function drawCharts(recordLength) {
+    // for forcast chart:
+    var forcastChart = new google.visualization.ColumnChart(document.getElementById('forcast_chart')),
 
-    // creating Data Table for history charts using methods provided by Google Charts
-    var historyChartsData = new google.visualization.DataTable(),
+        forcastChartData = new google.visualization.DataTable(), // getting ready forcast chart Data Table: 
 
-        // using column charts (aka vertical bar chart).
+        forcastChartOptions;
 
-        // for history charts.
-        historyCharts = new google.visualization.ColumnChart(document.getElementById('history_charts')),
-
-        // for forcast chart. 
-        forcastChart = new google.visualization.ColumnChart(document.getElementById('forcast_chart')),
-
-        // variables which are going to be reassigned later.
-        historyChartsOptions, forcastChartOptions;
-
-    /* In-case the user tries to scroll behind 1996 or beyond 2022
-    then this condition will render a chart with an error of no data available */
-    if (yearInputField.value < 1996 || yearInputField.value > 2022) {
-
-        // this block of code will hide all the filters if there is no data available
-        for (let index = 0; index < filters.length; index++) {
-            filters[index].style.display = "none";
-        }
-
-        // this is what to render if there is no data
-        historyChartsData.addColumn({ label: 'months', type: 'string' });
-        historyChartsData.addColumn({ label: 'cost', type: 'number' });
-        historyChartsData.addColumn('number', 'Solid Fuels');
-        historyChartsData.addColumn({ role: 'annotation', type: 'string' });
-        historyChartsData.addColumn('number', 'Gas');
-
-        historyChartsData.addRows([['', 0, 0, 'No Data Available', 0]]);
-
-        // Chart options
-        historyChartsOptions = {
-            title: 'Fuel Cost History',
-            annotations: {
-                stem: {
-                    color: 'transparent',
-                    length: 150
-                },
-                textStyle: {
-                    color: 'red',
-                    fontSize: 32
-                }
-            },
-            vAxis: {
-                title: 'Cost',
-                minValue: 0,
-                maxValue: 300,
-                format: 'decimal'
-            },
-            hAxis: {
-                title: 'Months'
-            },
-            legend: { position: 'none' }
-        };
-
-        // calling the draw function and passing chart data and chart options in parameters.
-        historyCharts.draw(historyChartsData, historyChartsOptions);
-
-    } else {
-
-        // this block of code will show all the fuel filters if there data available.
-        for (let index = 0; index < filters.length; index++) {
-            filters[index].style.display = "block";
-        }
-
-        // setting history charts columns.
-        historyChartsData.addColumn('string', 'Months');
-        historyChartsData.addColumn('number', 'Solid (D7DW)');
-        historyChartsData.addColumn('number', 'Gas (D7DU)');
-        historyChartsData.addColumn('number', 'Electricity (D7DT)');
-        historyChartsData.addColumn('number', 'Liquid (D7DV)');
-
-        // iterating fuel cost data using for-loop into DataTable rows.
-        for (i = 0; i <= recordLength; i++) {
-            historyChartsData.addRows([[months[i], D7DW[i], D7DU[i], D7DT[i], D7DV[i]]]);
-        }
-
-        // History charts options:
-        historyChartsOptions = {
-            legend: {
-                position: "bottom",
-                alignment: "center"
-            },
-            title: 'Fuel Cost History',
-            vAxis: {
-                title: 'Cost',
-                format: 'decimal'
-            },
-            hAxis: {
-                title: 'Months',
-                slantedText: true
-            },
-            height: 600,
-            colors: colors
-        };
-    }
-
-    // Color of bars:
-    var colors = ['#41DA96', '#E6AC2B', '#71EB92', '#FAAFF9'];
-
-    // this will set colors right colors to right bars when switch on/off fuel filters.
-    colors.forEach((color, index) => {
-        historyChartsData.setColumnProperty(index + 1, 'color', color);
-    });
-
-    // this function will filter the history charts.
-    function drawHistoryCharts() {
-
-        var chartColors = [], // this array is to store color of bars.
-            chartColumns = [0], // this variable is just to store an index.
-            historyChartsView = new google.visualization.DataView(historyChartsData); // DataView is a method provided by google charts for visualization.
-
-        // iterating fuel filter values:
-        Array.from(fuelFilters).forEach((fuelFilters) => {
-
-            // this variable is to store values of checked input field:
-            var seriesColumn = parseInt(fuelFilters.value);
-
-            // this condition is to check if the input field is checked or unchecked:
-            if (fuelFilters.checked) {
-
-                // this code block pushes the checked input fields values only
-                // and hides the rest fuel types:
-                chartColumns.push(seriesColumn);
-
-                // this code block retains respective colors for each bar:
-                chartColors.push(historyChartsData.getColumnProperty(seriesColumn, 'color'));
-            }
-        });
-
-        // this code block rerenders the filtered chart.
-        historyChartsView.setColumns(chartColumns);
-        historyChartsOptions.colors = chartColors;
-        historyCharts.draw(historyChartsView, historyChartsOptions);
-    }
-
-    // filtering fuel types on change using for-loop:
-    for (let index = 0; index < fuelFilters.length; index++) {
-        fuelFilters[index].onchange = () => {
-            drawHistoryCharts();
-        }
-    }
-
-    // calling the drawHistoryCharts() function:
-    drawHistoryCharts();
-
-
-    // getting ready forcast chart Data Table:
-    var forcastChartData = new google.visualization.DataTable();
     forcastChartData.addColumn('string', 'Months');
     forcastChartData.addColumn('number', 'Solid Fuels');
     forcastChartData.addColumn('number', 'Gas');
@@ -551,7 +555,11 @@ function drawCharts(recordLength) {
 
     // forcast chart options:
     forcastChartOptions = {
-        title: 'Fuel Cost History',
+        legend: {
+            position: "bottom",
+            alignment: "center"
+        },
+        title: 'Forcast Fuel Cost',
         vAxis: {
             title: 'Cost',
             minValue: 0,
@@ -565,78 +573,84 @@ function drawCharts(recordLength) {
         colors: colors
     };
 
-    // Calling the drawForcastChart():
-    drawForcastChart();
+    // calling the retainChartColors() function:
+    retainChartColors(forcastChartData);
+
+    // draw method is provided by google charts library to draw the chart:
+    forcastChart.draw(forcastChartData, forcastChartOptions);
+
+    // calling the filterChart() function:
+    filterChart(forcastChartData, forcastFuelFilters, forcastChartOptions, forcastChart)
+}
+
+// this arrow function saves code from being redent. 
+const filterChart = (chartData, chartFuelFilters, chartOptions, chart) => {
 
     // this function will filter the forcast chart:
-    function drawForcastChart() {
-        
+    function drawFilteredChart() {
+
         var chartColors = [], // this array is to store color of bars.
             chartColumns = [0], // this variable is just to store an index.
-            forcastChartView = new google.visualization.DataView(forcastChartData); // DataView is a method provided by google charts for visualization.
+            chartView = new google.visualization.DataView(chartData); // DataView is a method provided by google charts for visualization.
 
         // iterating fuel filter values:
-        Array.from(forcastFuelFilters).forEach((forcastFuelFilters) => {
+        Array.from(chartFuelFilters).forEach((chartFuelFilters) => {
 
             // this variable is to store values of checked input field
-            var seriesColumn = parseInt(forcastFuelFilters.value);
+            var seriesColumn = parseInt(chartFuelFilters.value);
 
             // this condition is to check if the input field is checked or unchecked.
-            if (forcastFuelFilters.checked) {
+            if (chartFuelFilters.checked) {
 
                 // this code block pushes the checked input fields values only
                 // and hides the rest fuel types.
                 chartColumns.push(seriesColumn);
 
                 // this code block retains respective colors for each bar:
-                chartColors.push(forcastChartData.getColumnProperty(seriesColumn, 'color'));
+                chartColors.push(chartData.getColumnProperty(seriesColumn, 'color'));
             }
         });
 
 
         // this code block rerenders the filtered chart:
-        forcastChartView.setColumns(chartColumns);
-        forcastChartOptions.colors = chartColors;
-        forcastChart.draw(forcastChartView, historyChartsOptions);
+        chartView.setColumns(chartColumns);
+        chartOptions.colors = chartColors;
+        chart.draw(chartView, chartOptions);
     }
 
     // filtering fuel types on change using for-loop:
-    for (let index = 0; index < forcastFuelFilters.length; index++) {
-        forcastFuelFilters[index].onchange = () => {
-            drawForcastChart();
+    for (let index = 0; index < chartFuelFilters.length; index++) {
+        chartFuelFilters[index].onchange = () => {
+            drawFilteredChart();
         }
     }
-
 }
 
 /* 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⠿⠛⠻⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣶⣤⣀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠃⠀⠀⠀⠸⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⠟⠉⠉⠻⣿⣧⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⢿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⡏⠀⠀⠀⠀⣿⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⠀⠀⠀⠀⢸⣿⡆⠀⠀⠀⠀⠀⠀⢸⣿⠇⠀⠀⠀⢰⣿⡏⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡀⠀⠀⠀⠀⣿⣧⠀⠀⠀⠀⠀⠀⣾⣿⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡇⠀⠀⠀⠀⢻⣿⡆⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⢀⣿⡿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀⠀⠀⠀⠈⣿⣇⠀⠀⠀⠀⣼⣿⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⡆⠀⠀⠀⠀⢻⣿⠀⠀⠀⢀⣿⡏⠀⠀⠀⠀⣼⣿⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡇⠀⠀⠀⠀⠸⣿⣇⠀⠀⣸⣿⠇⠀⠀⠀⠀⣿⡟⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣿⣿⠀⠀⠀⠀⠀⢻⣿⠀⠀⣿⡟⠀⠀⠀⠀⢰⣿⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠿⠛⠛⢻⣿⡄⠀⠀⠀⠀⠘⣿⡆⢸⣿⠃⠀⠀⠀⠀⣾⣿⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣤⣤⣾⣿⠁⠀⠀⠀⠈⣿⣷⠀⠀⠀⠀⠀⠻⣿⣿⠟⠀⠀⠀⠀⠀⣿⡏⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢀⣾⡿⠛⠋⢻⣿⠀⠀⠀⠀⠀⢹⣿⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⢀⣿⣿⠁⠀⠀⢸⣿⡇⠀⠀⠀⢠⣿⡟⠛⠛⠻⠿⣿⣷⣶⣦⣤⣀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⣿⣿⠀⠀⠀⠀⢻⣿⡀⠀⠀⢸⣿⡄⠀⠀⠀⠀⠀⠀⠉⠉⠛⠿⢿⣿⣶⣼⣿⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠹⣿⡇⠀⠀⠀⠘⣿⣇⠀⠀⠀⢻⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣿⣷⡀⠀⠀⠀⠹⣿⡆⠀⠀⠀⠻⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⡄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣿⣿⣷⡀⠀⠀⠀⢻⣿⣄⠀⠀⠀⠈⣻⣿⢿⣷⣶⣶⣤⠀⠀⠀⠀⠀⠀⠀⣿⣇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣿⣟⢿⣷⣄⡀⠀⠀⣹⣿⣷⣤⣴⣿⡿⠃⣴⣿⠟⢻⣿⠀⠀⠀⠀⠀⠀⠀⢻⣿⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⢻⣿⡀⠙⠿⢿⣿⣿⡿⠟⠉⠉⠉⠁⢀⣾⡿⠋⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀
-⠀⠀⠀⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠃⠀⠀⠀⠹⠧⠀⠀⠀⠀⠀⠀⢸⣿⠇⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢻⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡿⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠘⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠘⢿⣧⡄⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⠋⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⡟⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣷⣦⣄⣀⣀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣶⣿⠿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠻⠿⠿⠿⠿⠿⠿⠿⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣾⠛⠁⢰⣧⡈⢻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⣇⣼⡀⠻⠟⠁⠀⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⡞⣹⠙⣧⡀⠀⠀⡀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣀⡴⠋⠀⣀⣴⣿⡷⠴⠞⠁⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢾⣁⣀⡤⠾⠛⠁⣸⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠁⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀⣾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣿⠁⠀⠀⠀⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣰⡿⠁⠀⠀⠀⠀⠀⢿⣶⠶⠿⠟⠿⠿⣶⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣼⠟⠀⠀⠀⠀⠀⠀⠀⠈⠻⣄⠀⠀⠀⠀⠀⠈⠙⠛⠿⠶⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣸⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢀⣀⣠⣤⣤⣤⣤⣤⣀⠀⠉⠙⠳⢦⣄⡀⣀⣤⣀⣀⡄⠀
+⠀⢀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠈⠉⠻⢶⣀⠀⠀⠈⠉⢁⠈⠏⣿⣁⠀
+⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⣀⣀⡴⠁⠀⠀⢙⣿⡾
+⠀⠘⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⣀⣠⡾⠟⠃
+⠀⠀⠹⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡔⢊⣵⠞⠋⠁⠀⠀⠀
+⠀⠀⠀⠙⠿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠚⠉⠀⣠⣴⠟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠙⠳⠶⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⢤⣤⣴⠊⣁⣤⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⡷⢶⡶⠶⠤⠔⢺⠃⡟⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⠀⢰⡇⠀⡇⠀⠀⠀⢸⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⣤⣭⠿⠟⣃⣾⠋⠀⠀⢠⡟⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈⠉⠙⠛⢋⣿⣙⣶⣾⡿⢷⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠛⠛⠻⠧⠶⠾⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+This duck is happy that the work is finally over...
 
 */
